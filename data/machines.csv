@@ -1,0 +1,30 @@
+machine_id,machine_type,brand,machine_name,raw_price_php,adjusted_machine_price_php,power_watts,roi_hours,job_type
+1,FDM Printing,Creality,Ender 3 V3 SE,11199,9999.11,350,2190,fdm printing
+2,FDM Printing,Creality,Ender 3 V3 KE,15699,14016.96,350,2190,fdm printing
+3,FDM Printing,Creality,Ender 3 V3,18890,16866.07,350,2190,fdm printing
+4,FDM Printing,Creality,Ender 3 V3 plus,29199,26070.54,350,2190,fdm printing
+5,FDM Printing,Creality,Hi Combo,29990,26776.79,1150,2190,fdm printing
+6,FDM Printing,Creality,K1C,31449,28079.46,350,2190,fdm printing
+7,FDM Printing,Creality,K1 Max,49499,44195.54,1000,2190,fdm printing
+8,FDM Printing,Creality,K2 Plus,81499,72766.96,1200,2190,fdm printing
+9,FDM Printing,Bambu,A1 Combo,32995,29459.82,1300,2190,fdm printing
+10,FDM Printing,Bambu,P1S,44995,40174.11,1100,2190,fdm printing
+11,FDM Printing,Bambu,X1C,80999,72320.54,1100,2190,fdm printing
+12,FDM Printing,Elegoo,Centauri Carbon,4700000,4196428.57,1100,2190,fdm printing
+13,FDM Printing,Elegoo,OrangeStorm Giga,189000,168750,1800,2190,fdm printing
+14,SLA Printing,Creality,Halot Mage Pro,33000,29464.29,100,2190,Resin printing
+15,SLA Printing,Creality,Halot Sky 2022,120000,107142.86,230,2190,Resin printing
+16,SLA Printing,Anycubic,Photon M3 Max,44990,40169.64,120,2190,Resin printing
+17,SLA Printing,Elegoo,Saturn 3 Ultra,31499,28124.11,280,2190,Resin printing
+18,SLA Printing,Elegoo,Saturn 4 ultra,34999,31249.11,144,2190,Resin printing
+19,SLA Printing,Elegoo,Jupiter SE,44999,40177.68,180,2190,Resin printing
+20,FGF Printing,Kings3d,FGF 1800,5000000,4464285.71,10000,70080,FGF printing
+21,Wash & Cure,Anycubic,Anycubic Wash and Cure,14700,13125,40,2190,wash cure
+22,Wash & Cure,Anycubic,Anycubic Wash & Cure 3 Plus 7.6L,11999,10713.39,36,2190,wash cure
+23,Wash & Cure,Creality,Creality UW-02,9990,8919.64,60,2190,wash cure
+24,3D Scan,Revopoint,Revopoint Mini,34999,31249.11,24,2190,3d scan
+25,3D Scan,Revopoint,Revopoint Miraco Pro,94999,84820.54,24,2190,3d scan
+26,3D Scan,Revopoint,Revopoint MetroX,69990,62491.07,,2190,3d scan
+27,3D Scan,Creality,Creality CR-Scan Otter,45000,40178.57,36,2190,3d scan
+28,3D Scan,Creality,Creality CR-Scan Raptor,75000,66964.29,24,2190,3d scan
+29,3D Scan,Creality,Creality CR-Scan RaptorX,274990,245526.79,,2190,3d scan
