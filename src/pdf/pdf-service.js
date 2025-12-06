@@ -53,7 +53,7 @@ export async function generateQuotesPdf({ quotes, appInfo = {} } = {}) {
   // Use 'jh.png' or './jh.png' depending on how your app serves files.
   let jhLogoDataUrl = null;
   try {
-    jhLogoDataUrl = await loadImageAsBase64('../jh.png');
+    jhLogoDataUrl = await loadImageAsBase64('jh.png');
   } catch (err) {
     console.warn('Could not load jh.png, using placeholder frame instead.', err);
   }
