@@ -118,7 +118,7 @@ export function calculateResinPrintingQuote(inputs = {}, catalogs = {}) {
 
   if (isCustomMaterial) {
     materialAdjustedPricePerKg = toNumber(
-      inputs.customMaterialPricePerKg,
+      (inputs.customMaterialPricePerKg/1.12),
       0
     );
     materialDensityGPerMl = toNumber(inputs.customMaterialDensity, 1);

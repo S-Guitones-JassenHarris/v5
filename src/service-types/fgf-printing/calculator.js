@@ -124,7 +124,7 @@ export function calculateFgfPrintingQuote(inputs = {}, catalogs = {}) {
 
   if (isCustomMaterial) {
     materialAdjustedPricePerKg = toNumber(
-      inputs.customMaterialPricePerKg,
+      (inputs.customMaterialPricePerKg/1.12),
       0
     );
   } else {
