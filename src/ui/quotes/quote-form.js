@@ -26,10 +26,20 @@ const COLLAPSIBLE_SECTION_IDS = new Set([
   'materialSection8',
 ]);
 
-// Where we store open/closed state for collapsibles
+const inMemorySectionOpen = new Map();
+
+// Where we store open/closed state for collapsibles in sessionStorage (optional)
 const COLLAPSE_STORAGE_PREFIX = 'quoteCollapsible_';
 
 function loadSectionOpenState(sectionId, defaultOpen = false) {
+  if (!sectionId) return defaultOpen;
+
+  // 1) Prefer in-memory cache (works even if sessionStorage is blocked)
+  if (inMemorySectionOpen.has(sectionId)) {
+    return inMemorySectionOpen.get(sectionId);
+  }
+
+  // 2) Try sessionStorage (nice-to-have persistence across reloads)
   try {
     if (typeof window === 'undefined' || !window.sessionStorage) {
       return defaultOpen;
@@ -38,13 +48,23 @@ function loadSectionOpenState(sectionId, defaultOpen = false) {
       COLLAPSE_STORAGE_PREFIX + sectionId
     );
     if (raw === null) return defaultOpen;
-    return raw === '1';
+
+    const isOpen = raw === '1';
+    // sync into in-memory cache so subsequent reads are fast
+    inMemorySectionOpen.set(sectionId, isOpen);
+    return isOpen;
   } catch {
     return defaultOpen;
   }
 }
 
 function saveSectionOpenState(sectionId, isOpen) {
+  if (!sectionId) return;
+
+  // Always update in-memory cache so re-renders within this session are stable
+  inMemorySectionOpen.set(sectionId, isOpen);
+
+  // Try to persist to sessionStorage (but don't depend on it)
   try {
     if (typeof window === 'undefined' || !window.sessionStorage) {
       return;
@@ -54,10 +74,9 @@ function saveSectionOpenState(sectionId, isOpen) {
       isOpen ? '1' : '0'
     );
   } catch {
-    // ignore
+    // ignore storage errors
   }
 }
-
 export function createQuoteForm({ fields, values, onFieldChange } = {}) {
   const form = document.createElement('div');
   form.style.marginTop = '1rem';
