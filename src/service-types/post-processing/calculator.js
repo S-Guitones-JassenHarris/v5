@@ -202,10 +202,16 @@ export function calculatePostProcessingQuote(inputs = {}, _catalogs = {}) {
 }
 
 function toNumber(value, fallback = 0) {
+  // Treat empty string, null, or undefined as "no value" → use fallback
+  if (value === '' || value === null || typeof value === 'undefined') {
+    return fallback;
+  }
+
   const n = Number(value);
   if (!Number.isFinite(n) || Number.isNaN(n)) return fallback;
   return n;
 }
+
 function clamp(v, min, max) {
   if (v < min) return min;
   if (v > max) return max;

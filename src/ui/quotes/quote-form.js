@@ -26,6 +26,38 @@ const COLLAPSIBLE_SECTION_IDS = new Set([
   'materialSection8',
 ]);
 
+// Where we store open/closed state for collapsibles
+const COLLAPSE_STORAGE_PREFIX = 'quoteCollapsible_';
+
+function loadSectionOpenState(sectionId, defaultOpen = false) {
+  try {
+    if (typeof window === 'undefined' || !window.sessionStorage) {
+      return defaultOpen;
+    }
+    const raw = window.sessionStorage.getItem(
+      COLLAPSE_STORAGE_PREFIX + sectionId
+    );
+    if (raw === null) return defaultOpen;
+    return raw === '1';
+  } catch {
+    return defaultOpen;
+  }
+}
+
+function saveSectionOpenState(sectionId, isOpen) {
+  try {
+    if (typeof window === 'undefined' || !window.sessionStorage) {
+      return;
+    }
+    window.sessionStorage.setItem(
+      COLLAPSE_STORAGE_PREFIX + sectionId,
+      isOpen ? '1' : '0'
+    );
+  } catch {
+    // ignore
+  }
+}
+
 export function createQuoteForm({ fields, values, onFieldChange } = {}) {
   const form = document.createElement('div');
   form.style.marginTop = '1rem';
@@ -128,6 +160,8 @@ function renderCollapsibleSection(sectionField, groupFields, values, onFieldChan
   container.style.border = '1px solid rgba(148, 163, 184, 0.35)';
   container.style.background = 'rgba(15, 23, 42, 0.7)';
 
+  const sectionId = sectionField.id || '';
+
   // Header
   const header = document.createElement('button');
   header.type = 'button';
@@ -147,12 +181,8 @@ function renderCollapsibleSection(sectionField, groupFields, values, onFieldChan
   title.textContent = sectionField.label || 'Section';
 
   const caret = document.createElement('span');
-  caret.textContent = '▸'; // collapsed by default
   caret.style.fontSize = '0.75rem';
   caret.style.opacity = '0.8';
-
-  header.appendChild(title);
-  header.appendChild(caret);
 
   // Content
   const content = document.createElement('div');
@@ -161,15 +191,22 @@ function renderCollapsibleSection(sectionField, groupFields, values, onFieldChan
   content.style.gap = '0.5rem';
   content.style.padding = '0.5rem 0.75rem 0.75rem 0.75rem';
 
-  // Initially collapsed
-  let isOpen = false;
-  content.style.display = 'none';
+  // Initial open state (loaded from sessionStorage)
+  let isOpen = loadSectionOpenState(sectionId, false);
+  content.style.display = isOpen ? 'flex' : 'none';
+  caret.textContent = isOpen ? '▾' : '▸';
 
   header.addEventListener('click', () => {
     isOpen = !isOpen;
     content.style.display = isOpen ? 'flex' : 'none';
     caret.textContent = isOpen ? '▾' : '▸';
+    if (sectionId) {
+      saveSectionOpenState(sectionId, isOpen);
+    }
   });
+
+  header.appendChild(title);
+  header.appendChild(caret);
 
   // Render fields inside this collapsible
   groupFields.forEach((field) => {
