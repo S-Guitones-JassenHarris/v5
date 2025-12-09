@@ -261,11 +261,11 @@ export const fdmSingleColorFields = [
     updateOn: 'blur',
   },
   {
-    id: 'customMaterialAdjustedPricePerKg',
-    label: 'Custom material adjusted price per kg (PHP)',
+    id: 'customMaterialPricePerKg',
+    label: 'Custom material price per kg (PHP)',
     inputType: 'number',
     required: false,
-    placeholder: 'Adjusted price per kg in PHP',
+    placeholder: 'Price per kg in PHP',
     updateOn: 'blur',
   },
   {
