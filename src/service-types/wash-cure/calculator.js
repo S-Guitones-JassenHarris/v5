@@ -32,8 +32,13 @@ export function calculateWashCureQuote(inputs = {}, catalogs = {}) {
 
   const allowRush = !!inputs.allowRush;
 
-  const batchCount = toNumber(
-    inputs.washCureBatchCount,
+  const cureBatchCount = toNumber(
+    inputs.cureBatchCount,
+    DEFAULT_BATCH_COUNT
+  );
+
+   const washBatchCount = toNumber(
+    inputs.washBatchCount,
     DEFAULT_BATCH_COUNT
   );
   const electricalCostPerKwh = toNumber(
@@ -96,31 +101,31 @@ export function calculateWashCureQuote(inputs = {}, catalogs = {}) {
   const cureMachine = getMachineData(cureMachineId, 'customCureMachine');
 
   // Time calculations
-  const totalServiceTimeMinutes = handleTimePerBatchMinutes * batchCount;
+  const totalServiceTimeMinutes = washBatchCount > cureBatchCount? handleTimePerBatchMinutes * washBatchCount: handleTimePerBatchMinutes * cureBatchCount ;
 
   const totalMachineTimeMinutes =
-    washTimeMinutes * batchCount + cureTimeMinutes * batchCount;
+    (washTimeMinutes * washBatchCount) + (cureTimeMinutes * cureBatchCount);
 
   // Machine costs
   const washMachineCost =
-    ((washTimeMinutes * batchCount) *
+    ((washTimeMinutes * washBatchCount) *
       washMachine.adjustedPrice) /
       (washMachine.roiHours * 60) || 0;
 
   const cureMachineCost =
-    ((cureTimeMinutes * batchCount) *
+    ((cureTimeMinutes * cureBatchCount) *
       cureMachine.adjustedPrice) /
       (cureMachine.roiHours * 60) || 0;
 
   // Power costs
   const washMachinePowerCost =
-    ((washTimeMinutes * batchCount) *
+    ((washTimeMinutes * washBatchCount) *
       electricalCostPerKwh *
       washMachine.powerWatts) /
       (60 * 1000) || 0;
 
   const cureMachinePowerCost =
-    ((cureTimeMinutes * batchCount) *
+    ((cureTimeMinutes * cureBatchCount) *
       electricalCostPerKwh *
       cureMachine.powerWatts) /
       (60 * 1000) || 0;

@@ -83,8 +83,16 @@ export const washCureFields = [
     inputType: 'section',
   },
   {
-    id: 'washCureBatchCount',
-    label: 'Wash & cure batches',
+    id: 'washBatchCount',
+    label: 'Washbatches',
+    inputType: 'number',
+    required: false,
+    placeholder: 'Default 1',
+    updateOn: 'blur',
+  },
+  {
+    id: 'cureBatchCount',
+    label: 'Curebatches',
     inputType: 'number',
     required: false,
     placeholder: 'Default 1',
