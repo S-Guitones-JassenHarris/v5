@@ -290,9 +290,15 @@ function renderField(field, values, onFieldChange) {
     control.type = 'checkbox';
     isCheckbox = true;
   } else {
-    control = document.createElement('input');
-    control.type = field.inputType === 'number' ? 'number' : 'text';
+  control = document.createElement('input');
+  if (field.inputType === 'number') {
+    control.type = 'number';
+    control.step = '0.05';        // allow decimals (not just integer steps)
+    control.inputMode = 'decimal'; // hint for mobile keyboards
+  } else {
+    control.type = 'text';
   }
+}
 
   control.style.padding = isCheckbox ? '0' : '0.4rem 0.6rem';
   control.style.borderRadius = isCheckbox ? '0.3rem' : '0.6rem';
