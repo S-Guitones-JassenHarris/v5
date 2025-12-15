@@ -6,7 +6,7 @@
 // Defaults & constants
 // ------------------------------
 
-const ASSUMED_LAPTOP_WATTS = 1000;          // W
+const ASSUMED_LAPTOP_WATTS = 300;          // W
 const PER_DAY_HOURS = 8;                    // normal
 const PER_DAY_RUSH_HOURS = 10;              // rush
 
@@ -16,10 +16,10 @@ const DEFAULT_BASIC_SERVICE_COST_PER_HOUR = 500; // PHP/hr
 // Complexity mapping: UI stores strings, calculator uses numeric [1..5]
 const COMPLEXITY_MAP = {
   easy: 1,
-  novice: 2,
-  standard: 3,
-  hard: 4,
-  expert: 5,
+  novice: 1.4,
+  standard: 2,
+  hard: 2.75,
+  expert: 3.25,
 };
 
 export function calculate3dDesignQuote(inputs = {}, _catalogs = {}) {
@@ -49,7 +49,7 @@ export function calculate3dDesignQuote(inputs = {}, _catalogs = {}) {
 
   // Load factor from complexity: 1 + (complexity / 2)
   // So complexity=1 => 1.5x, complexity=3 => 2.5x, etc.
-  const complexityFactor = 1 + complexityLevel / 2;
+  const complexityFactor = (1 + complexityLevel) / 2;
 
   // Effective design hours, before converting to days
   const effectiveDesignHours = estimatedDesignHours * complexityFactor;
@@ -75,7 +75,7 @@ export function calculate3dDesignQuote(inputs = {}, _catalogs = {}) {
 
   // Power cost uses days (as per your formula)
   const powerCost =
-    (ASSUMED_LAPTOP_WATTS * designTimeDays * electricalCostPerKwh) / 1000 || 0;
+    (ASSUMED_LAPTOP_WATTS * effectiveDesignHours * electricalCostPerKwh) / 1000 || 0;
 
   // Service cost uses HOURS (more natural), derived from days
   const designHoursConsidered = designTimeDays * PER_DAY_HOURS;
@@ -97,15 +97,15 @@ export function calculate3dDesignQuote(inputs = {}, _catalogs = {}) {
   // Estimated delivery = design time considered (days), with min 3 already applied
   const estimatedDeliveryDays = designTimeDays;
   const rushEstimatedDeliveryDays = rushDesignTimeDays;
-
+   let shownDelivery = allowRush ? rushEstimatedDeliveryDays: estimatedDeliveryDays;
   // --- Sidebar line items ---
 
   const lineItems = [];
 
   lineItems.push({
     id: 'designTimeConsidered',
-    label: 'Design time considered (days)',
-    amount: 0, // value comes from meta.designTimeDays
+    label: 'Design time considered (hours)',
+    amount: effectiveDesignHours, // value comes from meta.designTimeDays
   });
   lineItems.push({
     id: 'powerCost',
@@ -145,7 +145,7 @@ export function calculate3dDesignQuote(inputs = {}, _catalogs = {}) {
   lineItems.push({
     id: 'estimatedDeliveryTime',
     label: 'Estimated delivery time (days)',
-    amount: 0, // from meta.estimatedDeliveryDays
+    amount: shownDelivery, 
   });
 
   const subtotal = totalExpense;

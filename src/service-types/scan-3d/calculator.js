@@ -6,7 +6,7 @@
 // Defaults & constants
 // ------------------------------
 
-const ASSUMED_LAPTOP_WATTS = 1000;          // W
+const ASSUMED_LAPTOP_WATTS = 300;          // W
 const PER_DAY_HOURS = 8;                    // normal
 const PER_DAY_RUSH_HOURS = 10;              // rush
 
@@ -117,12 +117,12 @@ export function calculate3dScanQuote(inputs = {}, catalogs = {}) {
 
   // Laptop power cost
   const laptopPowerCost = laptopUse
-    ? (ASSUMED_LAPTOP_WATTS * scanTimeDays * electricalCostPerKwh) / 1000 || 0
+    ? (ASSUMED_LAPTOP_WATTS * effectiveScanHours * electricalCostPerKwh) / 1000 || 0
     : 0;
 
   // Machine power cost
   const machinePowerCost =
-    (machinePowerWatts * scanTimeDays * electricalCostPerKwh) / 1000 || 0;
+    (machinePowerWatts * effectiveScanHours * electricalCostPerKwh) / 1000 || 0;
 
   // Machine amortization cost
   const machineCost =
@@ -150,6 +150,7 @@ export function calculate3dScanQuote(inputs = {}, catalogs = {}) {
   const estimatedDeliveryDays = scanTimeDays;
   const rushEstimatedDeliveryDays = rushScanTimeDays;
 
+  let shownDelivery = allowRush ? rushEstimatedDeliveryDays: estimatedDeliveryDays;
   // --- Sidebar line items ---
 
   const lineItems = [];
@@ -206,7 +207,7 @@ export function calculate3dScanQuote(inputs = {}, catalogs = {}) {
   lineItems.push({
     id: 'estimatedDeliveryTime',
     label: 'Estimated delivery time (days)',
-    amount: 0, // from meta.estimatedDeliveryDays
+    amount: shownDelivery, 
   });
 
   const subtotal = totalExpense;
