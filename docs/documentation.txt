@@ -8,815 +8,250 @@ It supports multiple quote tabs, dynamic inputs, cost breakdowns, global totals,
 
 This documentation covers:
 -How to use the calculator
--Definitions for all input fields
--How each output variable is calculated
--Details specific to FDM Single Color (the currently implemented service)
--Additional service types will be added later using the same modular system.
+-Basic reference to the calculations that the calculator uses
 
-2. How to Use the Calculator
+HOW TO USE THE CALCULATOR
 
-Step 1 — Create or select a quote tab
-At the top navigation bar, click + to add a new quote. You may rename the quote using the Quote name field in the main panel. You may switch between quotes using the tab bar.
-
-Step 2 — Choose a service type
-Use the Service type dropdown.  Selecting a service type loads its specific input fields.
-
-Step 3 — Fill in the required input fields
-
-Step 4 — Click “Update summary”
+Step 1 — Choose a service type, use the Service type dropdown.  Selecting a service type loads its specific input fields.
+Step 2 — Fill in the required input fields
+Step 3 — Click “Update summary”
+Step 4 — Review the sidebar
 
 Important:
-After editing fields, the calculator does not automatically recalculate. The update button turns red to indicate uncommitted changes. Click Update summary to commit inputs and refresh the sidebar.
+After editing fields, the calculator does not automatically recalculate. The update button turns red to indicate uncommitted changes.
+Click Update summary to commit inputs and refresh the sidebar.
+If a field is invalid, you will get the message: “Please check inputs, some are not valid.”
 
-If a field is invalid, you will get the message:
-“Please check inputs, some are not valid.”
+ADDITIONAL FEATURES:
+Multi Quotation tabs: found on the top left of the site right below the header, you will see a "+" ,upon clicking it will generate a new quotation. 
+Clear all quotes - Found on the top right corner of the site, it is used to delete all made qyotes
+Export - Found on the top right corner of the site, Export saves all committed quotes into a text code which can be used to .
+Import - Found on the top right corner of the site, opens a text window where a previously exported set of quotes can be pasted into for review.
+Documentation - Found on the top right corner of the site, opens a quick guide and reference for the calculator
+Changelog - Found on the top right corner of the site, opens a quick history of logged changes to the calculator. 
+PDF export - generates a pdf of all quotations, including a global summary quotation formatted similarly to official quotations. 
+Sidebar - Found on the right side of the site (on the bottom for mobile) , displays Per-quote, and by Line-by-line cost breakdown. 
+Global summary- Found on top of the sidebar, it is a section for sell price summation for multiple quotations
 
-Step 5 — Review the sidebar
 
-The sidebar displays: Per-quote, Line-by-line cost breakdown
 
-Subtotal (expenses only)
-Selling price (rush or normal)
-Completion time (normal and rush)
 
-Global summary:
-All quote names + their selling prices
-Grand total in PHP
 
-Step 6 — Export or import
-Export saves all committed quotes into a text code.
-Import loads a previously exported set of quotes.
-All quotes must be valid and committed before exporting.
+BASIC CALCULATION REFERENCE
 
+====================================================
+SERVICE — 3D DESIGN
+====================================================
 
+INPUT VARIABLES
+---------------
+- Estimated design hours (hours)
+- Design complexity (Easy, Novice, Standard, Hard, Expert)
+- Profit margin (%)
+- Rush option (Yes/No)
+- Electrical cost per kWh (optional, default PHP 12.5)
+- Service cost per hour (optional, default PHP 500)
 
+CALCULATED VARIABLES & FORMULAS
+-------------------------------
 
-────────────────────────────────────────
-V5 QUOTATION TOOL – FDM SINGLE COLOR
-VARIABLE AND CALCULATION REFERENCE
-────────────────────────────────────────
+1) Complexity factor
+   Each complexity level increases the workload.
+   Easy = lowest, Expert = highest.
 
-CONTENTS
+   Complexity factor = (1 + complexity level) ÷ 2
 
-Input Variables (User-Facing)
+2) Effective design hours
+   Effective hours = Estimated design hours × Complexity factor
 
-Catalog Variables (CSV-Derived)
+3) Design time (days)
+   Normal delivery:
+     Design days = Effective design hours ÷ 8 hours/day
+   Rush delivery:
+     Design days = Effective design hours ÷ 10 hours/day
 
-Internal / Derived Variables
+   Minimum delivery time is 3 days if any work exists.
 
-Output Variables (Line Items, Meta, Totals)
+4) Power cost
+   Power cost = Laptop watts × Effective hours × Electricity rate ÷ 1000
 
-Calculation Formulas (Step-by-Step)
+5) Service cost
+   Service cost = effective hours × Service cost per hour
 
-Custom Machine and Custom Material Logic
+6) Total expense
+   Total expense = Power cost + Service cost
 
-────────────────────────────────────────
-
-INPUT VARIABLES (USER-FACING)
-────────────────────────────────────────
+7) Final selling price
+   Final price = Total expense ÷ (1 − Profit margin)
 
-These are the fields the user can see and edit in the UI for the FDM Single Color service. They live in inputs (and committedInputs after Update summary).
-
-1.1 Core Print Time and Part Data
-
-Name: printHours
-Type: number
-Unit: hours
-Source: user input
-Description: Main print duration in whole or decimal hours.
-Usage: Used to compute total print time in hours.
-
-Name: printMinutes
-Type: number
-Unit: minutes
-Source: user input
-Description: Additional print duration in minutes.
-Usage: Converted to fractional hours and added to printHours.
-
-Name: printWeightGrams
-Type: number
-Unit: grams
-Source: user input
-Description: Weight of printed material.
-Usage: Converted to kilograms to compute material cost.
-
-Name: profitMarginPercent
-Type: number
-Unit: percent (%)
-Source: user input
-Description: Desired profit margin for sellable prints (batches).
-Usage: Converted to decimal; used in pricing formulas for sellable and test prints.
-
-Name: allowRush
-Type: boolean (checkbox)
-Unit: n/a
-Source: user input
-Description: Whether a rush pricing and rush completion time should be offered.
-Usage: If true, rush final sell price and rush completion days are calculated and used in totals.
-
-1.2 Machine and Material Selection
-
-Name: printerBrand
-Type: string (select)
-Unit: n/a
-Source: user input; options from machines CSV
-Description: Brand of the printer (e.g., Creality, Bambu, Elegoo).
-Usage: Filters printerMachineId dropdown to machines of that brand and job type FDM Printing.
-
-Name: printerMachineId
-Type: string (select)
-Unit: n/a
-Source: user input; options from machines CSV + “Custom option…”
-Description: Specific printer machine used for the job, or a custom machine definition.
-Usage: Used to find machine parameters (adjusted price, ROI hours, power) from CSV, or to select custom machine inputs when set to "custom".
-
-Name: materialType
-Type: string (select)
-Unit: n/a
-Source: user input; options from materials CSV
-Description: High-level material category (PLA, PETG, ABS, etc.) filtered by Job_type = FDM Printing.
-Usage: Filters materialId dropdown to materials matching that type and job type.
-
-Name: materialId
-Type: string (select)
-Unit: n/a
-Source: user input; options from materials CSV + “Custom option…”
-Description: Specific material used (SKU / product) or a custom material definition.
-Usage: Used to find material pricing from CSV, or to select custom material fields when set to "custom".
-
-1.3 Extra Fields – Advanced Service Parameters
-
-Name: testPrintCount
-Type: number
-Unit: count
-Source: user input (default conceptual value 0)
-Description: Number of test prints made before the final production runs.
-Usage: Used to compute test prints expense and profit.
-
-Name: batchCount
-Type: number
-Unit: count
-Source: user input (default conceptual value 1)
-Description: Number of batches of final sellable prints.
-Usage: Scales sell prints expense and handling time.
-
-Name: preparationMinutes
-Type: number
-Unit: minutes
-Source: user input
-Description: Total preparation time for the job (slicing, setup, calibration).
-Usage: Part of serviceCost via totalServiceMinutes.
-
-Name: handlingMinutesPerBatch
-Type: number
-Unit: minutes
-Source: user input
-Description: Handling time per batch (removal, cleaning, QC, packing).
-Usage: Multiplied by batchCount for total handling time in serviceCost.
-
-Name: electricalCostPerKwh
-Type: number
-Unit: PHP per kWh
-Source: user input (default 12.5)
-Description: Electricity cost rate used in powerCost computation.
-Usage: Used with machine power and total print time to compute powerCost.
-
-Name: basicServiceCostPerHour
-Type: number
-Unit: PHP per hour
-Source: user input (default 500)
-Description: Labor/service rate per hour.
-Usage: Converted to PHP per minute and multiplied by total service minutes.
-
-Name: leadTimeHours
-Type: number
-Unit: hours
-Source: user input, with default = totalPrintTimeHours * 5
-Description: Lead time used as a basis for completion day estimates.
-Usage: Converted into completionDays and rushCompletionDays.
-
-Name: miscCosts
-Type: number
-Unit: PHP
-Source: user input (default 0)
-Description: Additional fixed costs not accounted for elsewhere (e.g. special fees).
-Usage: Added into singlePrintExpense.
-
-Name: notes
-Type: string (textarea)
-Unit: n/a
-Source: user input
-Description: Free-form text for notes and cost breakdown annotations.
-Usage: Stored and exported; can be used for context or manual explanation.
-
-1.4 Custom Machine Fields
-
-These are only logically used if printerMachineId === "custom".
-
-Name: customMachineName
-Type: string (text)
-Unit: n/a
-Source: user input
-Description: Label for the custom machine (for your reference).
-Usage: Currently informational; calculations rely on numeric customMachine* fields.
-
-Name: customMachineAdjustedPricePhp
-Type: number
-Unit: PHP
-Source: user input
-Description: Adjusted machine price in PHP (e.g., purchase price adjusted for your costing model).
-Usage: Used instead of CSV adjusted_machine_price_php when using a custom machine.
-
-Name: customMachineRoiHours
-Type: number
-Unit: hours
-Source: user input
-Description: Total runtime hours over which the machine cost is amortized.
-Usage: Used instead of CSV roi_hours to compute machineCost.
-
-Name: customMachinePowerWatts
-Type: number
-Unit: watts (W)
-Source: user input
-Description: Power consumption of the custom machine in watts.
-Usage: Used instead of CSV power_watts to compute powerCost.
-
-1.5 Custom Material Fields
-
-These are only logically used if materialId === "custom".
-
-Name: customMaterialName
-Type: string (text)
-Unit: n/a
-Source: user input
-Description: Label for the custom material.
-Usage: Informational; calculations rely on numeric customMaterial* fields.
-
-Name: customMaterialAdjustedPricePerKg
-Type: number
-Unit: PHP per kg
-Source: user input
-Description: Adjusted price per kg for the custom material.
-Usage: Used instead of CSV adjusted_price_per_kg when computing materialCost.
-
-Name: customMaterialDensity
-Type: number
-Unit: g/ml
-Source: user input
-Description: Density of the custom material (currently reserved for future use).
-Usage: Not used in the current FDM Single Color calculator; present for future advanced calculations.
-
-Name: customMaterialType
-Type: string (text)
-Unit: n/a
-Source: user input
-Description: Text label for the custom material type (e.g., PLA, PETG).
-Usage: Informational; not directly used in the current cost formulas.
-
-1.6 Quote-Level Metadata (Not Service-Specific But Used)
-
-Name: quoteName
-Type: string
-Unit: n/a
-Source: user input (in main pane)
-Description: Custom name for the quote (e.g., “Client A – Prototype Bracket”).
-Usage: Displayed in tab labels, sidebar per-quote sections, and global summary, but it does not affect cost calculations.
-
-────────────────────────────────────────
-2. CATALOG VARIABLES (CSV-DERIVED)
-────────────────────────────────────────
-
-From machines CSV (filtered by Job_type / job_type):
-
-machine_id
-
-machine_type
-
-brand
-
-machine_name
-
-raw_price_php
-
-adjusted_machine_price_php
-
-power_watts
-
-roi_hours
-
-job_type
-
-Key fields used in calculation:
-
-Name: adjusted_machine_price_php
-Type: number (string in CSV, parsed to number)
-Usage: Base value for machineAdjustedPrice when using a non-custom machine.
-
-Name: power_watts
-Type: number
-Usage: Base for machinePowerWatts.
-
-Name: roi_hours
-Type: number
-Usage: Base for machineRoiHours (amortization period).
-
-From materials CSV (filtered by Job_type):
-
-material_id
-
-sku
-
-material_name
-
-Job_type
-
-sell_price_per_kg
-
-adjusted_price_per_kg
-
-density_g_per_ml
-
-material_type
-
-Key field used in calculation:
-
-Name: adjusted_price_per_kg
-Type: number
-Usage: Base for materialAdjustedPricePerKg when using a non-custom material.
-
-────────────────────────────────────────
-3. INTERNAL / DERIVED VARIABLES
-────────────────────────────────────────
-
-These variables are created inside calculateFdmSingleColorQuote.
-
-3.1 Basic Derived Quantities
-
-Name: totalPrintTimeHours
-Formula: see Section 5
-Unit: hours
-Description: Total print time in hours combining hours and minutes.
-Usage: Drives machineCost, powerCost, and default leadTimeHours.
-
-Name: profitMarginDecimal
-Unit: none (0–1)
-Description: profitMarginPercent converted to decimal and clamped between 0 and 0.99.
-Usage: Used in sell and test price formulas.
-
-Name: kgWeight
-Unit: kg
-Description: Print weight converted from grams to kilograms.
-Usage: Used to compute materialCost.
-
-Name: leadTimeDefaultHours
-Unit: hours
-Description: Default lead time derived from totalPrintTimeHours × 5.
-Usage: Fallback value for leadTimeHours if the user leaves it blank.
-
-Name: leadTimeHours
-Unit: hours
-Description: Final lead time used for completion days; either user-entered or leadTimeDefaultHours.
-Usage: Used in completionDays and rushCompletionDays.
-
-3.2 Machine-Related Derived Values
-
-Name: machineId
-Type: string
-Description: Equals inputs.printerMachineId.
-Usage: Determines whether to use CSV or custom machine parameters.
-
-Name: isCustomMachine
-Type: boolean
-Description: True if machineId === "custom".
-Usage: Branches between CSV and custom machine calculations.
-
-Name: machineAdjustedPrice
-Unit: PHP
-Description: Effective adjusted machine price, from either custom input or CSV.
-Usage: Used to compute machineCost.
-
-Name: machineRoiHours
-Unit: hours
-Description: Effective amortization hours for the machine.
-Usage: Used as denominator in machine amortization formula.
-
-Name: machinePowerWatts
-Unit: watts (W)
-Description: Effective power usage for the machine.
-Usage: Used in powerCost calculation.
-
-3.3 Material-Related Derived Values
-
-Name: materialId
-Type: string
-Description: Equals inputs.materialId.
-Usage: Determines whether to use CSV or custom material parameters.
-
-Name: isCustomMaterial
-Type: boolean
-Description: True if materialId === "custom".
-Usage: Branches between CSV and custom material calculations.
-
-Name: materialAdjustedPricePerKg
-Unit: PHP per kg
-Description: Effective adjusted material price per kg, from either custom input or CSV.
-Usage: Used to compute materialCost.
-
-3.4 Core Cost Components
-
-Name: machineCost
-Unit: PHP
-Description: Cost share of machine amortization for this job.
-
-Name: powerCost
-Unit: PHP
-Description: Electrical cost for this job based on power, time, and kWh rate.
-
-Name: materialCost
-Unit: PHP
-Description: Material cost based on kgWeight and price per kg.
+8) Rush price
+   Rush price = Final price × 1.5
 
-Name: singlePrintExpense
-Unit: PHP
-Description: Total expense per single print, including machine, power, material, and miscCosts.
 
-Name: totalServiceMinutes
-Unit: minutes
-Description: Combined service minutes for handling and preparation.
+====================================================
+SERVICE — FDM/FGF MULTI-COLOR/ SINGLE COLOR 3D PRINTING
+====================================================
 
-Name: serviceCost
-Unit: PHP
-Description: Labor/service cost for handling and preparation.
+INPUT VARIABLES
+---------------
+- Print hours
+- Print minutes
+- Machine selection
+- Materials : Up to 8 materials, each with weight (grams)
+- Number of batches
+- Number of test prints
+- Handling time per batch (minutes)
+- Preparation time (minutes)
+- Profit margin (%)
+- Rush option (Yes/No)
+- Electrical cost per kWh
+- Service cost per hour
+- Miscellaneous costs (optional)
 
-3.5 Print-Level and Test-Level Costs
+CALCULATED VARIABLES & FORMULAS
+-------------------------------
 
-Name: testPrintsExpense
-Unit: PHP
-Description: Total costs for all test prints (without profit added).
+1) Total print time (hours)
+   Total hours = Print hours + (Print minutes ÷ 60)
 
-Name: sellPrintsExpense
-Unit: PHP
-Description: Total costs for all sellable prints (without profit added).
+2) Material cost
+   Each material:
+     Material cost = (Weight in grams ÷ 1000) × Price per kg
 
-Name: sellPrintsWithProfit
-Unit: PHP
-Description: Total price for sellable prints including profit margin.
+   Total material cost = Sum of all material costs
 
-Name: sellPrintProfit
-Unit: PHP
-Description: Profit share for sellable prints only.
+3) Machine cost
+   Machine cost = (Machine price ÷ Machine lifespan hours) × Print hours
 
-Name: halfMargin
-Unit: none
-Description: profitMarginDecimal / 2; used for test print profit logic.
+4) Power cost
+   Power cost = Machine wattage × Print hours × Electricity rate ÷ 1000
 
-Name: testPrintsWithProfit
-Unit: PHP
-Description: Total price for test prints including half profit.
+5) Single print expense
+   Single print expense = Machine cost + Power cost + Material cost
 
-Name: testPrintProfit
-Unit: PHP
-Description: Profit share for test prints only.
+6) Service cost
+   Total service minutes =  [Handling time × (Batches + Test prints)] + Preparation time
 
-3.6 Totals and Final Prices
+   Service cost = Total service minutes × (Service cost per hour ÷ 60)
 
-Name: totalExpenses
-Unit: PHP
-Description: Sum of serviceCost + testPrintsExpense + sellPrintsExpense.
+7) Printing expenses
+   Test prints expense = Single print expense × Test prints
+   Sell prints expense = Single print expense × Batches
 
-Name: totalProfit
-Unit: PHP
-Description: Sum of sellPrintProfit + testPrintProfit.
+8) Selling prices
+   Sell prints price = Sell prints expense ÷ (1 − Profit margin)
+   Test prints price = Test prints expense + half of the normal profit
 
-Name: finalSellPrice
-Unit: PHP
-Description: Final non-rush selling price including all profit and service cost.
+9) Final selling price
+   Final price = Sell prints price + Test prints price + Service cost + Misc costs
 
-Name: rushFinalSellPrice
-Unit: PHP or null
-Description: Rush selling price; finalSellPrice × 1.5 if allowRush is true, otherwise null.
+10) Rush price
+    Rush price = Final price × 1.5
 
-3.7 Completion Times
+====================================================
+SERVICE — RESIN 3D PRINTING
+====================================================
 
-Name: completionDays
-Unit: days (integer)
-Description: Normal completion time based on leadTimeHours / 8, rounded up.
-Usage: Displayed in meta and sidebar.
+INPUT VARIABLES
+---------------
+- Print hours & minutes
+- Print volume (mL)
+- Resin density
+- Machine selection
+- Material selection
+- Profit margin (%)
+- Batches & test prints
+- Rush option
 
-Name: rushCompletionDays
-Unit: days (integer or null)
-Description: Rush completion time based on leadTimeHours / 10, rounded up when allowRush is true; null otherwise.
+CALCULATED VARIABLES & FORMULAS
+-------------------------------
 
-3.8 Output Container Variables
+1) Weight conversion
+   Weight (kg) = Print volume × Density ÷ 1000
 
-Name: lineItems
-Type: array of { id, label, amount }
-Description: Per-quote breakdown lines shown in the sidebar.
+2) Material cost
+   Material cost = Weight × Price per kg
 
-Name: subtotal
-Unit: PHP
-Description: Subtotal for this quote, defined as totalExpenses (expenses only).
+3) All other calculations same as FDM Single-Color Printing:
+   - Machine cost
+   - Power cost
+   - Service cost
+   - Profit calculation
 
-Name: adjustments
-Unit: PHP
-Description: Currently 0 for this service; reserved for future adjustments/discounts.
 
-Name: total
-Unit: PHP
-Description: Final “Selling price” for the quote. If rush is allowed, equals rushFinalSellPrice; otherwise equals finalSellPrice.
+====================================================
+SERVICE — 3D SCANNING
+====================================================
 
-Name: meta
-Type: object
-Description: Extra metadata for this quote, including timing and final prices:
+INPUT VARIABLES
+---------------
+- Estimated scan hours
+- Scan complexity
+- Machine selection
+- Laptop usage (Yes/No)
+- Profit margin (%)
+- Rush option
 
-meta.totalPrintTimeHours
+CALCULATED VARIABLES & FORMULAS
+-------------------------------
 
-meta.kgWeight
+1) Complexity-adjusted scan hours
+   Adjusted hours = Estimated hours × Complexity factor
 
-meta.leadTimeHours
+2) Scan days
+   Scan days = Adjusted hours ÷ 8 (minimum 3 days)
 
-meta.completionDays
+3) Machine cost
+   Machine cost = (Machine price ÷ Machine lifespan hours) × Adjusted hours
 
-meta.rushCompletionDays
+4) Power costs
+   Laptop power cost = Laptop watts × Adjusted hours × Electricity rate ÷ 1000
+   Machine power cost = Machine watts × Adjusted hours × Electricity rate ÷ 1000
+   Power Cost = Laptop power cost + Machine power cost
 
-meta.finalSellPrice
+5) Service cost
+   Service cost = Adjusted hours × Service cost per hour
 
-meta.rushFinalSellPrice
+6) Final price
+   Final price = Total expense ÷ (1 − Profit margin)
 
-meta.totalExpenses
 
-meta.totalProfit
+====================================================
+SERVICE — WASH & CURE
+====================================================
 
-────────────────────────────────────────
-4. OUTPUT VARIABLES (LINE ITEMS AND META)
-────────────────────────────────────────
+INPUT VARIABLES
+---------------
+- Handling time per batch (minutes)
+- Wash time per batch (minutes)
+- Cure time per batch (minutes)
+- Wash & cure batch counts
+- Machine selections
+- Profit margin (%)
+- Rush option
 
-Line items (lineItems array) are:
+CALCULATED VARIABLES & FORMULAS
+-------------------------------
 
-machineCost
+1) Total service time
+   Service time =
+     Handling time × Maximum batch count
 
-powerCost
+2) Total machine time
+   Machine time = (Wash time × Wash batches) + (Cure time × Cure batches)
 
-materialCost
+3) Machine cost
+   Machine cost = Machine minutes × (Machine price ÷ Lifespan minutes)
 
-singlePrintExpense
+4) Power cost
+   Power cost = Machine minutes × Wattage × Electricity rate ÷ (60 × 1000)
 
-serviceCost
+5) Service cost
+   Service cost =  Service minutes × Service cost per hour ÷ 60
 
-testPrintsExpense
+6) Total expense
+   Total expense = Service cost + Machine costs + Power costs
 
-sellPrintsExpense
+7) Final price
+   Final price = Total expense ÷ (1 − Profit margin)
 
-testPrintsWithProfit
-
-sellPrintsWithProfit
-
-sellPrintProfit
-
-testPrintProfit
-
-totalExpenses
-
-totalProfit
-
-finalSellPrice
-
-rushFinalSellPrice (only if rushFinalSellPrice != null)
-
-completionTime (special label with amount 0, used for display text)
-
-Meta object contains key figures for display and export:
-
-totalPrintTimeHours
-
-kgWeight
-
-leadTimeHours
-
-completionDays
-
-rushCompletionDays
-
-finalSellPrice
-
-rushFinalSellPrice
-
-totalExpenses
-
-totalProfit
-
-Totals used by global summary:
-
-subtotal = totalExpenses
-
-adjustments = 0
-
-total = rushFinalSellPrice if not null, else finalSellPrice
-
-────────────────────────────────────────
-5. CALCULATION FORMULAS (STEP-BY-STEP)
-────────────────────────────────────────
-
-5.1 Core Derivations
-
-Total print time (hours):
-
-totalPrintTimeHours = printHours + (printMinutes / 60)
-
-Profit margin decimal:
-
-profitMarginDecimal = clamp(profitMarginPercent / 100, 0, 0.99)
-
-Weight in kilograms:
-
-kgWeight = printWeightGrams / 1000
-
-Default lead time:
-
-leadTimeDefaultHours = totalPrintTimeHours * 5
-
-Lead time (used):
-
-leadTimeHours = (inputs.leadTimeHours provided by user)
-OR leadTimeDefaultHours if not provided
-
-5.2 Machine Parameters
-
-If using a machine from CSV (printerMachineId !== "custom"):
-
-machineAdjustedPrice = adjusted_machine_price_php (from machines CSV row)
-machineRoiHours = roi_hours (from CSV row, default 1 if missing)
-machinePowerWatts = power_watts (from CSV row, default 0 if missing)
-
-If using a custom machine (printerMachineId === "custom"):
-
-machineAdjustedPrice = customMachineAdjustedPricePhp
-machineRoiHours = customMachineRoiHours
-machinePowerWatts = customMachinePowerWatts
-
-5.3 Material Parameters
-
-If using a material from CSV (materialId !== "custom"):
-
-materialAdjustedPricePerKg = adjusted_price_per_kg (from materials CSV row)
-
-If using a custom material (materialId === "custom"):
-
-materialAdjustedPricePerKg = customMaterialAdjustedPricePerKg
-
-5.4 Cost Calculations
-
-Machine cost:
-
-machineCost = (machineAdjustedPrice / machineRoiHours) * totalPrintTimeHours
-
-Power cost:
-
-powerCost = (machinePowerWatts * totalPrintTimeHours / 1000) * electricalCostPerKwh
-
-Material cost:
-
-materialCost = kgWeight * materialAdjustedPricePerKg
-
-Single print expense:
-
-singlePrintExpense = machineCost + powerCost + materialCost + miscCosts
-
-Total service minutes:
-
-totalServiceMinutes = preparationMinutes + (handlingMinutesPerBatch * batchCount)
-
-Service cost:
-
-serviceCost = totalServiceMinutes * (basicServiceCostPerHour / 60)
-
-5.5 Test Prints and Sellable Prints
-
-Test prints expense (no profit added yet):
-
-testPrintsExpense = singlePrintExpense * testPrintCount
-
-Sell prints expense (no profit added yet):
-
-sellPrintsExpense = singlePrintExpense * batchCount
-
-Sell prints with profit:
-
-If profitMarginDecimal >= 0.99:
-sellPrintsWithProfit = sellPrintsExpense
-Else:
-sellPrintsWithProfit = sellPrintsExpense / (1 - profitMarginDecimal)
-
-Sell print profit:
-
-sellPrintProfit = sellPrintsWithProfit - sellPrintsExpense
-
-Half margin (for test prints):
-
-halfMargin = profitMarginDecimal / 2
-
-Test prints with profit:
-
-If halfMargin >= 0.99:
-testPrintsWithProfit = testPrintsExpense
-Else:
-testPrintsWithProfit = testPrintsExpense / (1 - halfMargin)
-
-Test print profit:
-
-testPrintProfit = testPrintsWithProfit - testPrintsExpense
-
-5.6 Expenses, Profit, and Final Prices
-
-Total expenses:
-
-totalExpenses = serviceCost + testPrintsExpense + sellPrintsExpense
-
-Total profit:
-
-totalProfit = sellPrintProfit + testPrintProfit
-
-Final (non-rush) sell price:
-
-finalSellPrice = sellPrintsWithProfit + testPrintsWithProfit + serviceCost
-
-Rush final sell price (if allowRush):
-
-If allowRush:
-rushFinalSellPrice = finalSellPrice * 1.5
-Else:
-rushFinalSellPrice = null
-
-Completion time (normal):
-
-If totalPrintTimeHours > 0:
-completionDays = ceil(leadTimeHours / 8)
-Else:
-completionDays = 0
-
-Rush completion time:
-
-If allowRush and totalPrintTimeHours > 0:
-rushCompletionDays = ceil(leadTimeHours / 10)
-Else:
-rushCompletionDays = null
-
-5.7 Quote-Level Totals
-
-Subtotal (expenses only):
-
-subtotal = totalExpenses
-
-Adjustments:
-
-adjustments = 0 (reserved for future use)
-
-Final total (Selling price):
-
-If rushFinalSellPrice is not null:
-total = rushFinalSellPrice
-Else:
-total = finalSellPrice
-
-This “total” is what the sidebar calls “Selling price” and what the global summary uses for grand total. If rush is allowed, the rush price is used; otherwise the normal final price is used.
-
-────────────────────────────────────────
-6. CUSTOM MACHINE AND CUSTOM MATERIAL LOGIC
-────────────────────────────────────────
-
-Custom machine and material allow the user to quote jobs that use equipment or materials not defined in the catalogs.
-
-Custom machine behavior:
-
-The user sets printerMachineId to “Custom option…” from the Printer dropdown.
-
-When printerMachineId === "custom":
-
-CSV-based values are ignored for machine cost and power.
-
-customMachineAdjustedPricePhp, customMachineRoiHours, and customMachinePowerWatts are used instead.
-
-All downstream machine-related costs (machineCost and powerCost) use these custom values.
-
-Custom material behavior:
-
-The user sets materialId to “Custom option…” from the Material dropdown.
-
-When materialId === "custom":
-
-CSV-based adjusted_price_per_kg is ignored.
-
-customMaterialAdjustedPricePerKg is used instead.
-
-All downstream material-related costs (materialCost, singlePrintExpense, and anything that uses them) use this custom price.
-
-If the user selects Custom but leaves custom numeric fields blank:
-
-Fallback defaults in the calculator (via toNumber) will treat those values as 0 (or 1 for ROI hours).
-
-This may produce incomplete or skewed results, so in future we can add stricter validation like:
-“If Printer = Custom, then custom machine fields are required.”
-
-────────────────────────────────────────
-END OF FDM SINGLE COLOR REFERENCE
-────────────────────────────────────────
