@@ -1,5 +1,11 @@
 V5 Quotation Tool - Changelog
 
-- v0.1: Initial multi-quote UI, tabs, and basic state.
-- v0.2: FDM Single Color service with real calculations.
-- v0.3: Global totals, quote naming, documentation + changelog buttons.
+- v05.1: Steve Guitones (15/12/2025)
+. Initial working prototype uploaded to github , https://s-guitones-jassenharris.github.io/v5/ 
+. uses deprecated printer and material data, this needs to be updated on the regular and is the main purpose of this change log. 
+. for code errors and calculation irregularities. kindly refer to the code base itself and not the project file found on chatgpt named 
+(steve, system design blueprint). This is mainly due to length of converstation. the chat session no longer remembers code details accurately,
+additionally, code has been manually updated and changed to fit the needs. I recommend simply doing copy paste sessions with chatgpt using new chats, 
+or if you can manually just code even more better. 
+
+
