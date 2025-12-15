@@ -1,5 +1,10 @@
 V5 Quotation Tool - Changelog
 
+-v05.2: Steve Guitones 
+. begin updating printer data. for bambulab printers, used https://wiki.bambulab.com/en/general/power-consumption as a basis for power
+
+
+
 - v05.1: Steve Guitones (15/12/2025)
 . Initial working prototype uploaded to github , https://s-guitones-jassenharris.github.io/v5/ 
 . uses deprecated printer and material data, this needs to be updated on the regular and is the main purpose of this change log. 
