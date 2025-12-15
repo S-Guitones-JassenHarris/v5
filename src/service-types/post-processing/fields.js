@@ -21,7 +21,7 @@ export const postProcessingFields = [
     inputType: 'select',
     required: true,
     options: [
-    { value: 'minimal', label: 'minimal' },
+    { value: 'none', label: 'none' },
     { value: 'easy', label: 'easy' },
     { value: 'standard', label: 'standard' },
     { value: 'hard', label: 'hard' },
@@ -104,4 +104,5 @@ export const postProcessingFields = [
     placeholder: 'Default 500',
     updateOn: 'blur',
   },
+
 ];

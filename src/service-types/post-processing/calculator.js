@@ -11,19 +11,19 @@ const DEFAULT_BASIC_SERVICE_COST_PER_HOUR = 500;
 
 // Complexity mapping [1..5]
 const COMPLEXITY_MAP = {
-  minimal: 1,
-  easy: 2,
-  standard: 3,
-  hard: 4,
-  extreme: 5,
+  none: 1,
+  easy: 1.4,
+  standard: 2,
+  hard: 2.75,
+  extreme: 3.25,
 };
 
 // Electrical tool usage mapping [0..5] (0 = none)
 const TOOL_USAGE_MAP = {
   none: 0,
   minimal: 1,
-  moderate: 2,
-  significant: 3,
+  significant: 2,
+  moderate: 3,
   heavy: 4,
 };
 
@@ -59,11 +59,12 @@ export function calculatePostProcessingQuote(inputs = {}, _catalogs = {}) {
   const miscCosts = toNumber(inputs.miscCosts, 0);
 
   // Considered service time (days)
-  const complexityFactor = 1 + complexityLevel / 2;
+  const complexityFactor = (1 + complexityLevel) / 2;
+  const consideredServiceTime = estimatedPostProcessHours * complexityFactor;
 
   let consideredServiceTimeDays =
     estimatedPostProcessHours > 0
-      ? (estimatedPostProcessHours * complexityFactor) / PER_DAY_HOURS
+      ? (consideredServiceTime) / PER_DAY_HOURS
       : 0;
 
   // No explicit min-cap specified in your text here, so I leave it as-is.
@@ -71,7 +72,7 @@ export function calculatePostProcessingQuote(inputs = {}, _catalogs = {}) {
 
   let rushConsideredServiceTimeDays =
     allowRush && estimatedPostProcessHours > 0
-      ? (estimatedPostProcessHours * complexityFactor) /
+      ? (consideredServiceTime) /
         PER_DAY_RUSH_HOURS
       : null;
 
@@ -82,7 +83,7 @@ export function calculatePostProcessingQuote(inputs = {}, _catalogs = {}) {
   // Electrical cost
   const electricalCost =
     (ASSUMED_TOOL_WATTS *
-      consideredServiceTimeDays *
+      consideredServiceTime *
       electricalCostPerKwh *
       toolUsageLevel) /
       1000 || 0;
@@ -119,8 +120,8 @@ export function calculatePostProcessingQuote(inputs = {}, _catalogs = {}) {
 
   lineItems.push({
     id: 'consideredServiceTime',
-    label: 'Considered service time (days)',
-    amount: 0, // from meta.consideredServiceTimeDays
+    label: 'Considered service time (hours)',
+    amount: consideredServiceTime, // from meta.consideredServiceTimeDays
   });
   lineItems.push({
     id: 'serviceCost',
