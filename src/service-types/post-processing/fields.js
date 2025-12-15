@@ -20,6 +20,13 @@ export const postProcessingFields = [
     label: 'Post process complexity',
     inputType: 'select',
     required: true,
+    options: [
+    { value: 'minimal', label: 'minimal' },
+    { value: 'easy', label: 'easy' },
+    { value: 'standard', label: 'standard' },
+    { value: 'hard', label: 'hard' },
+    { value: 'extreme', label: 'extreme' },
+  ],
   },
   {
     id: 'profitMarginPercent',
@@ -39,6 +46,13 @@ export const postProcessingFields = [
     label: 'Electrical tool usage level',
     inputType: 'select',
     required: true,
+    options: [
+    { value: 'none', label: 'none' },
+    { value: 'minimal', label: 'minimal' },
+    { value: 'significant', label: 'significant' },
+    { value: 'moderate', label: 'moderate' },
+    { value: 'heavy', label: 'heavy' },
+  ],
   },
   {
     id: 'procurementCosts',

@@ -315,8 +315,32 @@ function renderField(field, values, onFieldChange) {
   }
 
   if (isSelect) {
+  if (field.options && Array.isArray(field.options)) {
+    // Static options
+    control.innerHTML = '';
+
+    const placeholderOpt = document.createElement('option');
+    placeholderOpt.value = '';
+    placeholderOpt.disabled = true;
+    placeholderOpt.textContent = 'Choose...';
+    placeholderOpt.selected = !controlValue;
+    control.appendChild(placeholderOpt);
+
+    field.options.forEach((opt) => {
+      const o = document.createElement('option');
+      o.value = opt.value;
+      o.textContent = opt.label;
+      if (controlValue === opt.value) {
+        o.selected = true;
+      }
+      control.appendChild(o);
+    });
+  } else {
+    // CSV-driven select
     populateSelectControl(control, field, controlValue, values);
   }
+}
+
 
   // Validation
   const { isValid, message } = validateField(field, controlValue);

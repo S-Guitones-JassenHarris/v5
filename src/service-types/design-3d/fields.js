@@ -22,6 +22,13 @@ export const Design3dFields = [
     label: 'Design complexity',
     inputType: 'select',
     required: true,
+        options: [
+    { value: 'Easy', label: 'Easy' },
+    { value: 'Novice', label: 'Novice' },
+    { value: 'Standard', label: 'Standard'},
+    { value: 'Hard', label: 'Hard' },
+    { value: 'Expert', label: 'Expert' },
+      ],
   },
   {
     id: 'profitMarginPercent',

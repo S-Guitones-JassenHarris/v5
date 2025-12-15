@@ -20,10 +20,10 @@ const CUSTOM_MACHINE_VAT_FACTOR = 1.12;
 // Complexity mapping for scan complexity [1..5]
 const COMPLEXITY_MAP = {
   easy: 1,
-  novice: 2,
-  standard: 3,
-  hard: 4,
-  expert: 5,
+  novice: 1.4,
+  standard: 2,
+  hard: 2.75,
+  expert: 3.25,
 };
 
 export function calculate3dScanQuote(inputs = {}, catalogs = {}) {
@@ -54,7 +54,7 @@ export function calculate3dScanQuote(inputs = {}, catalogs = {}) {
 
   // --- Scan time calculations ---
 
-  const complexityFactor = 1 + complexityLevel / 2;
+  const complexityFactor =  (1 + complexityLevel) / 2;
   const effectiveScanHours = estimatedScanHours * complexityFactor;
 
   let scanTimeDays =
@@ -156,8 +156,8 @@ export function calculate3dScanQuote(inputs = {}, catalogs = {}) {
 
   lineItems.push({
     id: 'scanTimeConsidered',
-    label: 'Scan time considered (days)',
-    amount: 0, // from meta.scanTimeDays
+    label: 'Scan time considered (hours)',
+    amount: effectiveScanHours, 
   });
   lineItems.push({
     id: 'laptopPowerCost',
