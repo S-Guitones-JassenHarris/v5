@@ -18,7 +18,6 @@ const DEFAULT_LEAD_TIME_MULTIPLIER = 5;             // lead time = totalPrintTim
 // Machine ROI defaults
 const DEFAULT_CUSTOM_MACHINE_ROI_HOURS = 2190;      // for custom machines
 const DEFAULT_MACHINE_ROI_HOURS_FALLBACK = 2190;    // fallback for CSV machines if ROI missing
-
 // VAT / adjustment assumptions for custom machine price
 const CUSTOM_MACHINE_VAT_FACTOR = 1.12;             // customMachinePriceAdjusted = price / 1.12
 
@@ -67,9 +66,11 @@ export function calculateFdmSingleColorQuote(inputs = {}, catalogs = {}) {
 
   const kgWeight = printWeightGrams / 1000;
 
+  const leadMultiplier = allowRush? 10: 8; 
+
   const leadTimeDefaultHours =
     totalPrintTimeHours * (DEFAULT_LEAD_TIME_MULTIPLIER + (batchCount + testPrintCount));
-  const leadTimeHours = toNumber(inputs.leadTimeHours, leadTimeDefaultHours);
+  const leadTimeHours = toNumber((inputs.leadTimeDays* leadMultiplier), leadTimeDefaultHours);
 
   // --- Machine (CSV or custom) ---
 

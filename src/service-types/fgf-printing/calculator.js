@@ -68,10 +68,12 @@ export function calculateFgfPrintingQuote(inputs = {}, catalogs = {}) {
     printHours + (printMinutes > 0 ? printMinutes / 60 : 0);
 
   const kgWeight = printWeightGrams / 1000;
+ 
+  const leadMultiplier = allowRush? 10: 8; 
 
   const leadTimeDefaultHours =
     totalPrintTimeHours * (DEFAULT_LEAD_TIME_MULTIPLIER + (batchCount + testPrintCount));
-  const leadTimeHours = toNumber(inputs.leadTimeHours, leadTimeDefaultHours);
+  const leadTimeHours = toNumber((inputs.leadTimeDays * leadMultiplier), leadTimeDefaultHours);
 
   // --- Machine (CSV or custom) ---
 

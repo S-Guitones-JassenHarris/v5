@@ -139,10 +139,12 @@ export function calculateResinPrintingQuote(inputs = {}, catalogs = {}) {
 
   // KG Weight = [ Print volume * density ] / 1000
   const kgWeight = (printVolumeMl * materialDensityGPerMl) / 1000;
+ 
+  const leadMultiplier = allowRush? 10: 8; 
 
   const leadTimeDefaultHours =
     totalPrintTimeHours * (DEFAULT_LEAD_TIME_MULTIPLIER + (batchCount + testPrintCount));
-  const leadTimeHours = toNumber(inputs.leadTimeHours, leadTimeDefaultHours);
+  const leadTimeHours = toNumber((inputs.leadTimeDays * leadMultiplier), leadTimeDefaultHours);
 
   // --- Cost calculations ---
 

@@ -153,8 +153,8 @@ export const fdmMultiColorFields = [
     updateOn: 'blur',
   },
   {
-    id: 'leadTimeHours',
-    label: 'Lead time (hours)',
+    id: 'leadTimeDays',
+    label: 'Lead time (days)',
     inputType: 'number',
     required: false,
     placeholder: 'Default = additional × 5 print time , hard minimum cap of 3 days, recommended to use for prints greater than 24 hours',
