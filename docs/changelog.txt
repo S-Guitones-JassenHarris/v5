@@ -1,9 +1,8 @@
 V5 Quotation Tool - Changelog
 
--v05.2: Steve Guitones 
-. begin updating printer data. for bambulab printers, used https://wiki.bambulab.com/en/general/power-consumption as a basis for power
-
-
+-v05.2: Steve Guitones (16/12/2025)
+. begin updated printer and material data. Resin densities need to be defined still( all were given an arbitrary density  of 1.1). Fixed lead time
+calculations and input labels. 
 
 - v05.1: Steve Guitones (15/12/2025)
 . Initial working prototype uploaded to github , https://s-guitones-jassenharris.github.io/v5/ 

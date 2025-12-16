@@ -5,9 +5,9 @@ import { loadImageAsBase64 } from './image-loader.js';
 // ------ App-level config (you can tweak these) ------
 
 export const DEFAULT_APP_INFO = {
-  companyName: 'Your Company Name',
-  companyAddress: 'Your Address Line 1\nCity, Country',
-  companyContact: 'Phone: +63-000-000-0000\nEmail: info@example.com',
+  companyName: 'Jassen Harris Industries Corp.',
+  companyAddress: 'Y1231 Tomas Mapua, Sta. Cruz Manila, Metro Manila, Philippines',
+  companyContact: 'tech.support@jassenharris.com',
   quoteTitle: 'TECHNICAL QUOTATION',
   appVersion: 'V5.0.0',
   preparedBy: 'Prepared by: Quotation System',
@@ -214,11 +214,11 @@ function drawSummaryPage(doc, quotes, cfg, creationDateStr, jhLogoDataUrl) {
   // CUSTOMER DETAILS (left top)
   const customerBlockHeight = 32;
   const customerLines = [
-    'Name/Company Name',
-    'Customer Contact Number',
-    'Date and Time Requested',
-    'Shipping Address',
-    'Pinned Shipping Location',
+    'Name/Company Name: ',
+    'Customer Contact Number: ',
+    'Date and Time Requested: ',
+    'Shipping Address: ',
+    'Pinned Shipping Location: ',
   ];
   const afterCustomerY = drawLabeledBlock(
     leftX,
@@ -233,8 +233,8 @@ function drawSummaryPage(doc, quotes, cfg, creationDateStr, jhLogoDataUrl) {
   const quotationBlockHeight = 22;
   const quotationLines = [
     'Quotation Prepared By:',
-    'Contact Person',
-    'Contact Details',
+    'Contact Person: ',
+    'Contact Details: ',
   ];
   const afterQuotationY = drawLabeledBlock(
     leftX,
@@ -252,7 +252,7 @@ function drawSummaryPage(doc, quotes, cfg, creationDateStr, jhLogoDataUrl) {
     blocksTopY,
     columnWidth,
     descriptionBlockHeight,
-    'Description of Work',
+    'Description of Work: ',
     []
   );
 
@@ -263,7 +263,7 @@ function drawSummaryPage(doc, quotes, cfg, creationDateStr, jhLogoDataUrl) {
     afterDescriptionY + 4,
     columnWidth,
     remarksBlockHeight,
-    'Remarks',
+    'Remarks: ',
     []
   );
 
@@ -274,7 +274,7 @@ function drawSummaryPage(doc, quotes, cfg, creationDateStr, jhLogoDataUrl) {
     afterRemarksY + 4,
     columnWidth,
     completionBlockHeight,
-    'Completion Time',
+    'Completion Time: ',
     []
   );
 
