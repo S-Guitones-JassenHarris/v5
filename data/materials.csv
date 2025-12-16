@@ -1,184 +1,184 @@
 material_id,sku,material_name,Job_type,sell_price_per_kg,adjusted_price_per_kg,density_g_per_ml,material_type
-1,0,"ESUN, PLA+, 1kg",FDM Printing,799,713.3928571,1,PLA
-2,0,"ESUN, ReFilament PLA+, 1kg",FDM Printing,749,668.75,1,PLA
-3,0,"ESUN, PLA Basic, 1kg",FDM Printing,699,624.1071429,1,PLA
-4,0,"ESUN, PLA Clear / Translucent, 1kg",FDM Printing,819,731.25,1,PLA
-5,0,"ESUN, PLA Translucent, 1kg",FDM Printing,750,669.6428571,1,PLA
-6,0,"ESUN, PLA Matte, 1kg",FDM Printing,800,714.2857143,1,PLA
-7,0,"ESUN, PLA Matte (Alt Price), 1kg",FDM Printing,799,713.3928571,1,PLA
-8,0,"ESUN, PLA Matte Dual, 1kg",FDM Printing,849,758.0357143,1,PLA
-9,0,"ESUN, PLA Matte Rainbow / PLA-Rock, 1kg",FDM Printing,899,802.6785714,1,PLA
-10,0,"ESUN, ReFilament PLA Matte, 1kg",FDM Printing,750,669.6428571,1,PLA
-11,0,"ESUN, ReFilament PLA Matte (Adaptable Bambu), 1kg",FDM Printing,749,668.75,1,PLA
-12,0,"ESUN, Silk PLA, 1kg",FDM Printing,850,758.9285714,1,PLA
-13,0,"ESUN, Silk PLA Metallic, 1kg",FDM Printing,1100,982.1428571,1,PLA
-14,0,"ESUN, Silk PLA Rainbow / eMarble / Luminous Rainbow, 1kg",FDM Printing,1500,1339.285714,1,PLA
-15,0,"ESUN, PLA-Silk Magic, 1kg",FDM Printing,1300,1160.714286,1,PLA
-16,0,"ESUN, PLA-Silk Mystic, 1kg",FDM Printing,1400,1250,1,PLA
-17,0,"ESUN, ePLA-Silk Candy, 1kg",FDM Printing,1199,1070.535714,1,PLA
-18,0,"ESUN, ePLA-Chameleon, 1kg",FDM Printing,1199,1070.535714,1,PLA
-19,0,"ESUN, ePLA-Magic, 1kg",FDM Printing,1199,1070.535714,1,PLA
-20,0,"ESUN, ePLA-Silk Rainbow, 1kg",FDM Printing,1199,1070.535714,1,PLA
-21,0,"ESUN, PLA Luminous / Luminous Cored, 1kg",FDM Printing,1100,982.1428571,1,PLA
-22,0,"ESUN, PLA LW, 1kg",FDM Printing,1600,1428.571429,1,PLA
-23,0,"ESUN, PLA Wood, 1kg",FDM Printing,1099,981.25,1,PLA
-24,0,"ESUN, ST PLA, 1kg",FDM Printing,949,847.3214286,1,PLA
-25,0,"ESUN, PLA+HS High Speed, 1kg",FDM Printing,850,758.9285714,1,PLA
-26,0,"ESUN, PLA-CF Carbon Fiber, 1kg",FDM Printing,1169,1043.75,1,PLA
-27,0,"Creality, Ender PLA, 1kg",FDM Printing,599,534.8214286,1,PLA
-28,0,"Creality, Hyper Series PLA, 1kg",FDM Printing,899,802.6785714,1,PLA
-29,0,"Creality, Hyper PLA RFID, 1kg",FDM Printing,899,802.6785714,1,PLA
-30,0,"Creality, BASF Ultra Series PLA, 1kg",FDM Printing,1190,1062.5,1,PLA
-31,0,"Creality, Soleyin Ultra PLA, 1kg",FDM Printing,649,579.4642857,1,PLA
-32,0,"Creality, Soleyin Ultra PLA Matte, 1kg",FDM Printing,699,624.1071429,1,PLA
-33,0,"Elegoo, PLA, 1kg",FDM Printing,650,580.3571429,1,PLA
-34,0,"Elegoo, PLA Marble, 1kg",FDM Printing,649,579.4642857,1,PLA
-35,0,"Elegoo, PLA Matte, 1kg",FDM Printing,649,579.4642857,1,PLA
-36,0,"Elegoo, PLA Pro, 1kg",FDM Printing,749,668.75,1,PLA
-37,0,"Elegoo, Rapid PLA+, 1kg",FDM Printing,800,714.2857143,1,PLA
-38,0,"Sunlu, PLA+, 1kg",FDM Printing,719,641.9642857,1,PLA
-39,0,"Sunlu, PLA Meta, 1kg",FDM Printing,749,668.75,1,PLA
-40,0,"Sunlu, PLA Rainbow, 1kg",FDM Printing,949,847.3214286,1,PLA
-41,0,"Sunlu, PLA Glow in the Dark, 1kg",FDM Printing,1099,981.25,1,PLA
-42,0,"Sunlu, PLA Matte, 1kg",FDM Printing,699,624.1071429,1,PLA
-43,0,"Sunlu, High Speed PLA, 1kg",FDM Printing,799,713.3928571,1,PLA
-44,0,"Sunlu, High Speed PLA Marble, 1kg",FDM Printing,825,736.6071429,1,PLA
-45,0,"Sunlu, PLA Classic, 1kg",FDM Printing,719,641.9642857,1,PLA
-46,0,"Sunlu, PLA Transparent, 1kg",FDM Printing,699,624.1071429,1,PLA
-47,0,"Bambu Lab, PLA Basic, 1kg",FDM Printing,749,668.75,1,PLA
-48,0,"Bambu Lab, PLA Matte, 1kg",FDM Printing,749,668.75,1,PLA
-49,0,"Bambu Lab, PLA Silk, 1kg",FDM Printing,990,883.9285714,1,PLA
-50,0,"Bambu Lab, PLA Silk (Special Series), 1kg",FDM Printing,799,713.3928571,1,PLA
-51,0,"Bambu Lab, PLA Silk+, 1kg",FDM Printing,730,651.7857143,1,PLA
-52,0,"Bambu Lab, PLA Basic Gradient, 1kg",FDM Printing,990,883.9285714,1,PLA
-53,0,"Bambu Lab, PLA Marble, 1kg",FDM Printing,990,883.9285714,1,PLA
-54,0,"Bambu Lab, PLA Metal, 1kg",FDM Printing,990,883.9285714,1,PLA
-55,0,"Bambu Lab, PLA Galaxy, 1kg",FDM Printing,990,883.9285714,1,PLA
-56,0,"Bambu Lab, PLA Sparkle, 1kg",FDM Printing,990,883.9285714,1,PLA
-57,0,"Bambu Lab, PLA Glow, 1kg",FDM Printing,990,883.9285714,1,PLA
-58,0,"Bambu Lab, PLA Wood, 1kg",FDM Printing,990,883.9285714,1,PLA
-59,0,"Bambu Lab, PLA-CF, 1kg",FDM Printing,990,883.9285714,1,PLA
-60,0,"Bambu Lab, PLA Translucent, 1kg",FDM Printing,699,624.1071429,1,PLA
-61,0,"Bambu Lab, PLA Lite, 1kg",FDM Printing,690,616.0714286,1,PLA
-62,0,"Bambu Lab, Refilament PLA Basic / Matte, 1kg",FDM Printing,649,579.4642857,1,PLA
-63,0,"Bambu Lab, Refilament PLA Lite, 1kg",FDM Printing,590,526.7857143,1,PLA
-64,0,"Bambu Lab, Refilament PLA-CF, 1kg",FDM Printing,900,803.5714286,1,PLA
-65,0,"Bambu Lab, PLA Aero, 1kg",FDM Printing,2449,2186.607143,1,PLA
-66,0,"Polymaker, Panchroma PLA Basic, 1kg",FDM Printing,749,668.75,1,PLA
-67,0,"Polymaker, Panchroma Matte, 1kg",FDM Printing,749,668.75,1,PLA
-68,0,"Polymaker, Panchroma Satin / Matte Dual / Gradient, 1kg",FDM Printing,799,713.3928571,1,PLA
-69,0,"Polymaker, Panchroma Silk, 1kg",FDM Printing,899,802.6785714,1,PLA
-70,0,"Polymaker, Panchroma Dual Silk, 1kg",FDM Printing,999,891.9642857,1,PLA
-71,0,"Polymaker, Panchroma Galaxy / Starlight / Luminous / Glow, 1kg",FDM Printing,999,891.9642857,1,PLA
-72,0,"Polymaker, Panchroma UV Color Change, 1kg",FDM Printing,1199,1070.535714,1,PLA
-73,0,"Kexcelled, K5 PLA Matte, 1kg",FDM Printing,849,758.0357143,1,PLA
-74,0,"Kexcelled, K5 PLA Gradient, 1kg",FDM Printing,1190,1062.5,1,PLA
-75,0,"Kexcelled, K6 PLA FR, 1kg",FDM Printing,1649,1472.321429,1,PLA
-76,0,"Jadeway, PLA, 1kg",FDM Printing,549,490.1785714,1,PLA
-77,0,"Jadeway, PLA Matte, 1kg",FDM Printing,599,534.8214286,1,PLA
-78,0,"Jadeway, PLA Silk, 1kg",FDM Printing,709,633.0357143,1,PLA
-79,0,"Jadeway, PLA Galaxy, 1kg",FDM Printing,799,713.3928571,1,PLA
-80,0,"BIQU, PLA-HR Flexible, 1kg",FDM Printing,3490,3116.071429,1,PLA
-81,0,"ESUN, ABS+, 1kg",FDM Printing,750,669.6428571,1,ABS
-82,0,"ESUN, ABS+HS High Speed, 1kg",FDM Printing,800,714.2857143,1,ABS
-83,0,"ESUN, ABS Max, 1kg",FDM Printing,950,848.2142857,1,ABS
-84,0,"ESUN, ABS High Temp / ABS-HT, 1kg",FDM Printing,999,891.9642857,1,ABS
-85,0,"ESUN, ABS-CF Carbon Fiber, 1kg",FDM Printing,1449,1293.75,1,ABS
-86,0,"Bambu Lab, ABS, 1kg",FDM Printing,749,668.75,1,ABS
-87,0,"Bambu Lab, ABS-GF Glass Fiber, 1kg",FDM Printing,1149,1025.892857,1,ABS
-88,0,"Bambu Lab, Refilament ABS, 1kg",FDM Printing,649,579.4642857,1,ABS
-89,0,"Sunlu, ABS, 0.9kg",FDM Printing,599,534.8214286,1,ABS
-90,0,"Sunlu, ABS, 1kg",FDM Printing,599,534.8214286,1,ABS
-91,0,"Sunlu, High Speed ABS, 1kg",FDM Printing,749,668.75,1,ABS
-92,0,"Sunlu, PC-ABS, 1kg",FDM Printing,2050,1830.357143,1,ABS
-93,0,"Kexcelled, K5 ABS, 1kg",FDM Printing,799,713.3928571,1,ABS
-94,0,"Kexcelled, K5 ABS Matte, 1kg",FDM Printing,859,766.9642857,1,ABS
-95,0,"Jadeway, ABS, 1kg",FDM Printing,549,490.1785714,1,ABS
-96,0,"ESUN, PETG Solid, 1kg",FDM Printing,750,669.6428571,1,PETG
-97,0,"ESUN, PETG Natural Transparent Clear, 1kg",FDM Printing,750,669.6428571,1,PETG
-98,0,"ESUN, PETG Basic, 1kg",FDM Printing,750,669.6428571,1,PETG
-99,0,"ESUN, PETG+HS High Speed, 1kg",FDM Printing,800,714.2857143,1,PETG
-100,0,"ESUN, ReFilament PETG, 1kg",FDM Printing,700,625,1,PETG
-101,0,"ESUN, ReFilament PETG (Adaptable Bambu), 1kg",FDM Printing,699,624.1071429,1,PETG
-102,0,"ESUN, PETG Matte, 1kg",FDM Printing,749,668.75,1,PETG
-103,0,"ESUN, PETG-ESD, 1kg",FDM Printing,1499,1338.392857,1,PETG
-104,0,"ESUN, PETG-CF, 1kg",FDM Printing,1189,1061.607143,1,PETG
-105,0,"Sunlu, PETG, 1kg",FDM Printing,749,668.75,1,PETG
-106,0,"Sunlu, PETG, 0.9kg",FDM Printing,749,668.75,1,PETG
-107,0,"Sunlu, High Speed Matte PETG, 1kg",FDM Printing,779,695.5357143,1,PETG
-108,0,"Elegoo, Rapid PETG, 1kg",FDM Printing,699,624.1071429,1,PETG
-109,0,"Elegoo, PETG Pro, 1kg",FDM Printing,679,606.25,1,PETG
-110,0,"Bambu Lab, PETG HF, 1kg",FDM Printing,749,668.75,1,PETG
-111,0,"Bambu Lab, PETG Translucent, 1kg",FDM Printing,749,668.75,1,PETG
-112,0,"Bambu Lab, PETG-CF, 1kg",FDM Printing,1099,981.25,1,PETG
-113,0,"Bambu Lab, Refilament PETG HF, 1kg",FDM Printing,649,579.4642857,1,PETG
-114,0,"Bambu Lab, Refilament PETG Translucent, 1kg",FDM Printing,649,579.4642857,1,PETG
-115,0,"Jadeway, Hyper PETG, 1kg",FDM Printing,549,490.1785714,1,PETG
-116,0,"Jadeway, PETG Matte, 1kg",FDM Printing,599,534.8214286,1,PETG
-117,0,"Kexcelled, K5 PETG, 1kg",FDM Printing,829,740.1785714,1,PETG
-118,0,"Kexcelled, K5 PETG GF, 1kg",FDM Printing,1049,936.6071429,1,PETG
-119,0,"Kexcelled, K5 PETG Matte, 1kg",FDM Printing,899,802.6785714,1,PETG
-120,0,"ESUN, ASA UV Resistant, 1kg",FDM Printing,1149,1025.892857,1,ASA
-121,0,"ESUN, ASA+, 1kg",FDM Printing,1299,1159.821429,1,ASA
-122,0,"Elegoo, ASA, 1kg",FDM Printing,799,713.3928571,1,ASA
-123,0,"Bambu Lab, ASA, 1kg",FDM Printing,1199,1070.535714,1,ASA
-124,0,"Bambu Lab, ASA Aero, 1kg",FDM Printing,2349,2097.321429,1,ASA
-125,0,"Jadeway, ASA, 1kg",FDM Printing,799,713.3928571,1,ASA
-126,0,"ESUN, TPU 95A Flexible, 1kg",FDM Printing,1199.75,1071.205357,1,TPU
-127,0,"ESUN, TPU 95A Transparent, 1kg",FDM Printing,1199,1070.535714,1,TPU
-128,0,"ESUN, TPU 95A Rainbow, 1kg",FDM Printing,1600,1428.571429,1,TPU
-129,0,"ESUN, TPU 95A Color Change (Temp), 1kg",FDM Printing,1700,1517.857143,1,TPU
-130,0,"ESUN, TPU-64D, 1kg",FDM Printing,949,847.3214286,1,TPU
-131,0,"Sunlu, TPU Silk, 1kg",FDM Printing,999,891.9642857,1,TPU
-132,0,"Bambu Lab, TPU 95A HF, 1kg",FDM Printing,1990,1776.785714,1,TPU
-133,0,"Bambu Lab, TPU for AMS, 1kg",FDM Printing,1649,1472.321429,1,TPU
-134,0,"Bambu Lab, TPU 85A, 1kg",FDM Printing,1999,1784.821429,1,TPU
-135,0,"Bambu Lab, TPU 90A, 1kg",FDM Printing,1899,1695.535714,1,TPU
-136,0,"Bambu Lab, TPU 90A Gradient, 1kg",FDM Printing,2249,2008.035714,1,TPU
-137,0,"Bambu Lab, TPU 90A White, 1kg",FDM Printing,1949,1740.178571,1,TPU
-138,0,"ESUN, TPE-83A eLastic, Natural/White, 1kg",FDM Printing,"1,700.00",1517.857143,1,TPE
-139,0,"ESUN, TPE-83A eLastic, Black, 1kg",FDM Printing,"1,900.00",1696.428571,1,TPE
-140,0,"ESUN, ePA Clear,  1kg",FDM Printing,"1,800.00",1607.142857,1,NYLON/PA
-141,0,"Sunlu, PA6-CF, Black, 1kg",FDM Printing,"2,599.00",2320.535714,1,NYLON/PA
-142,0,"ESUN, Nylon, PA12-CF, 1kg",FDM Printing,4999,4463.392857,1,CARBON FIBER
-143,0,"ESUN, Nylon, PA12+CF, 1kg",FDM Printing,6499,5802.678571,1,CARBON FIBER
-144,0,"ESUN, PLA, PLA-CF, 1kg",FDM Printing,1169,1043.75,1,CARBON FIBER
-145,0,"ESUN, PETG, PETG-CF, 1kg",FDM Printing,1189,1061.607143,1,CARBON FIBER
-146,0,"ESUN, ABS, ABS-CF, 1kg",FDM Printing,1449,1293.75,1,CARBON FIBER
-147,0,"Sunlu, Nylon, PA6-CF, 1kg",FDM Printing,2599,2320.535714,1,CARBON FIBER
-148,0,"Bambu Lab, Nylon, PA6-CF, 1kg",FDM Printing,3149,2811.607143,1,CARBON FIBER
-149,0,"Bambu Lab, Nylon, PAHT-CF, 1kg",FDM Printing,3990,3562.5,1,CARBON FIBER
-150,0,"Bambu Lab, PLA, PLA-CF, 1kg",FDM Printing,990,883.9285714,1,CARBON FIBER
-151,0,"Bambu Lab, PETG, PETG-CF, 1kg",FDM Printing,1099,981.25,1,CARBON FIBER
-152,0,"Bambu Lab, PLA, PLA-CF Refilament, 1kg",FDM Printing,900,803.5714286,1,CARBON FIBER
-153,0,"ESUN, Resin-PLA Pro, 1kg",SLA Printing,1300,1160.714286,1.1,ESUN
-154,0,"ESUN, Resin-PLA (Standard), 1kg",SLA Printing,1190,1062.5,1.1,ESUN
-155,0,"ESUN, Hard Tough Resin, 1kg",SLA Printing,2500,2232.142857,1.1,ESUN
-156,0,"ESUN, High Temp Resin, 1kg",SLA Printing,2599,2320.535714,1.1,ESUN
-157,0,"ESUN, HT100 High Temperature Resin, 1kg",SLA Printing,2799,2499.107143,1.1,ESUN
-158,0,"ESUN, PMMA-like Clear Resin PM200, 1kg",SLA Printing,2950,2633.928571,1.1,ESUN
-159,0,"ESUN, Castable Jewelry Resin, 1kg",SLA Printing,9300,8303.571429,1.1,ESUN
-160,0,"ESUN, TC100 Dental Crown Resin, 1kg",SLA Printing,5500,4910.714286,1.1,ESUN
-161,0,"ESUN, OM100 Ortho Model Resin, 1kg",SLA Printing,2500,2232.142857,1.1,ESUN
-162,0,"ESUN, OM100 Ortho Model Resin (Beige New), 1kg",SLA Printing,2499,2231.25,1.1,ESUN
-163,0,"ESUN, SG100 Surgical Guide Resin, 1kg",SLA Printing,5500,4910.714286,1.1,ESUN
-164,0,"ESUN, WO100 Water-Washable Ortho Resin, 1kg",SLA Printing,1999,1784.821429,1.1,ESUN
-165,0,"ESUN, DM100 Dental Restoration Resin, 1kg",SLA Printing,2499,2231.25,1.1,ESUN
-166,0,"Sunlu, Standard Resin, 1kg",SLA Printing,1100,982.1428571,1.1,SUNLU
-167,0,"Sunlu, Standard Plus Resin, 1kg",SLA Printing,1199,1070.535714,1.1,SUNLU
-168,0,"Sunlu, 14K Standard Resin, 1kg",SLA Printing,1449,1293.75,1.1,SUNLU
-169,0,"Sunlu, ABS-Like Resin, 1kg",SLA Printing,1450,1294.642857,1.1,SUNLU
-170,0,"Sunlu, Water Washable ABS-Like Resin, 1kg",SLA Printing,1749,1561.607143,1.1,SUNLU
-171,0,"Sunlu, DM 2.0 Dental Model Resin, 1kg",SLA Printing,2949,2633.035714,1.1,SUNLU
-172,0,"Elegoo, Standard 8K Resin, 1kg",SLA Printing,2000,1785.714286,1.1,ELEGOO
-173,0,"Elegoo, ABS-Like Resin, 1kg",SLA Printing,1249,1115.178571,1.1,ELEGOO
-174,0,"Elegoo, ABS-Like Resin 3.0, 1kg",SLA Printing,1249,1115.178571,1.1,ELEGOO
-175,0,"Anycubic, Normal Resin, 1kg",SLA Printing,1099,981.25,1.1,ANYCUBIC
-176,0,"Anycubic, Standard Resin V2, 1kg",SLA Printing,1299,1159.821429,1.1,ANYCUBIC
-177,0,"Anycubic, ABS-Like Resin Pro 2, 1kg",SLA Printing,1449,1293.75,1.1,ANYCUBIC
-178,0,"Anycubic, Tough Resin 2.0, 1kg",SLA Printing,1999,1784.821429,1.1,ANYCUBIC
-179,0,"Creality, Halot ABS-Like Resin 2.0, 1kg",SLA Printing,1290,1151.785714,1.1,CREALITY
-180,0,"Creality, Halot Rigid Resin, 1kg",SLA Printing,1349,1204.464286,1.1,CREALITY
+1,0,ESUN_ PLA+_ 1kg,FDM Printing,799,713.3928571,1,PLA
+2,0,ESUN_ ReFilament PLA+_ 1kg,FDM Printing,749,668.75,1,PLA
+3,0,ESUN_ PLA Basic_ 1kg,FDM Printing,699,624.1071429,1,PLA
+4,0,ESUN_ PLA Clear / Translucent_ 1kg,FDM Printing,819,731.25,1,PLA
+5,0,ESUN_ PLA Translucent_ 1kg,FDM Printing,750,669.6428571,1,PLA
+6,0,ESUN_ PLA Matte_ 1kg,FDM Printing,800,714.2857143,1,PLA
+7,0,ESUN_ PLA Matte (Alt Price)_ 1kg,FDM Printing,799,713.3928571,1,PLA
+8,0,ESUN_ PLA Matte Dual_ 1kg,FDM Printing,849,758.0357143,1,PLA
+9,0,ESUN_ PLA Matte Rainbow / PLA-Rock_ 1kg,FDM Printing,899,802.6785714,1,PLA
+10,0,ESUN_ ReFilament PLA Matte_ 1kg,FDM Printing,750,669.6428571,1,PLA
+11,0,ESUN_ ReFilament PLA Matte (Adaptable Bambu)_ 1kg,FDM Printing,749,668.75,1,PLA
+12,0,ESUN_ Silk PLA_ 1kg,FDM Printing,850,758.9285714,1,PLA
+13,0,ESUN_ Silk PLA Metallic_ 1kg,FDM Printing,1100,982.1428571,1,PLA
+14,0,ESUN_ Silk PLA Rainbow / eMarble / Luminous Rainbow_ 1kg,FDM Printing,1500,1339.285714,1,PLA
+15,0,ESUN_ PLA-Silk Magic_ 1kg,FDM Printing,1300,1160.714286,1,PLA
+16,0,ESUN_ PLA-Silk Mystic_ 1kg,FDM Printing,1400,1250,1,PLA
+17,0,ESUN_ ePLA-Silk Candy_ 1kg,FDM Printing,1199,1070.535714,1,PLA
+18,0,ESUN_ ePLA-Chameleon_ 1kg,FDM Printing,1199,1070.535714,1,PLA
+19,0,ESUN_ ePLA-Magic_ 1kg,FDM Printing,1199,1070.535714,1,PLA
+20,0,ESUN_ ePLA-Silk Rainbow_ 1kg,FDM Printing,1199,1070.535714,1,PLA
+21,0,ESUN_ PLA Luminous / Luminous Cored_ 1kg,FDM Printing,1100,982.1428571,1,PLA
+22,0,ESUN_ PLA LW_ 1kg,FDM Printing,1600,1428.571429,1,PLA
+23,0,ESUN_ PLA Wood_ 1kg,FDM Printing,1099,981.25,1,PLA
+24,0,ESUN_ ST PLA_ 1kg,FDM Printing,949,847.3214286,1,PLA
+25,0,ESUN_ PLA+HS High Speed_ 1kg,FDM Printing,850,758.9285714,1,PLA
+26,0,ESUN_ PLA-CF Carbon Fiber_ 1kg,FDM Printing,1169,1043.75,1,PLA
+27,0,Creality_ Ender PLA_ 1kg,FDM Printing,599,534.8214286,1,PLA
+28,0,Creality_ Hyper Series PLA_ 1kg,FDM Printing,899,802.6785714,1,PLA
+29,0,Creality_ Hyper PLA RFID_ 1kg,FDM Printing,899,802.6785714,1,PLA
+30,0,Creality_ BASF Ultra Series PLA_ 1kg,FDM Printing,1190,1062.5,1,PLA
+31,0,Creality_ Soleyin Ultra PLA_ 1kg,FDM Printing,649,579.4642857,1,PLA
+32,0,Creality_ Soleyin Ultra PLA Matte_ 1kg,FDM Printing,699,624.1071429,1,PLA
+33,0,Elegoo_ PLA_ 1kg,FDM Printing,650,580.3571429,1,PLA
+34,0,Elegoo_ PLA Marble_ 1kg,FDM Printing,649,579.4642857,1,PLA
+35,0,Elegoo_ PLA Matte_ 1kg,FDM Printing,649,579.4642857,1,PLA
+36,0,Elegoo_ PLA Pro_ 1kg,FDM Printing,749,668.75,1,PLA
+37,0,Elegoo_ Rapid PLA+_ 1kg,FDM Printing,800,714.2857143,1,PLA
+38,0,Sunlu_ PLA+_ 1kg,FDM Printing,719,641.9642857,1,PLA
+39,0,Sunlu_ PLA Meta_ 1kg,FDM Printing,749,668.75,1,PLA
+40,0,Sunlu_ PLA Rainbow_ 1kg,FDM Printing,949,847.3214286,1,PLA
+41,0,Sunlu_ PLA Glow in the Dark_ 1kg,FDM Printing,1099,981.25,1,PLA
+42,0,Sunlu_ PLA Matte_ 1kg,FDM Printing,699,624.1071429,1,PLA
+43,0,Sunlu_ High Speed PLA_ 1kg,FDM Printing,799,713.3928571,1,PLA
+44,0,Sunlu_ High Speed PLA Marble_ 1kg,FDM Printing,825,736.6071429,1,PLA
+45,0,Sunlu_ PLA Classic_ 1kg,FDM Printing,719,641.9642857,1,PLA
+46,0,Sunlu_ PLA Transparent_ 1kg,FDM Printing,699,624.1071429,1,PLA
+47,0,Bambu Lab_ PLA Basic_ 1kg,FDM Printing,749,668.75,1,PLA
+48,0,Bambu Lab_ PLA Matte_ 1kg,FDM Printing,749,668.75,1,PLA
+49,0,Bambu Lab_ PLA Silk_ 1kg,FDM Printing,990,883.9285714,1,PLA
+50,0,Bambu Lab_ PLA Silk (Special Series)_ 1kg,FDM Printing,799,713.3928571,1,PLA
+51,0,Bambu Lab_ PLA Silk+_ 1kg,FDM Printing,730,651.7857143,1,PLA
+52,0,Bambu Lab_ PLA Basic Gradient_ 1kg,FDM Printing,990,883.9285714,1,PLA
+53,0,Bambu Lab_ PLA Marble_ 1kg,FDM Printing,990,883.9285714,1,PLA
+54,0,Bambu Lab_ PLA Metal_ 1kg,FDM Printing,990,883.9285714,1,PLA
+55,0,Bambu Lab_ PLA Galaxy_ 1kg,FDM Printing,990,883.9285714,1,PLA
+56,0,Bambu Lab_ PLA Sparkle_ 1kg,FDM Printing,990,883.9285714,1,PLA
+57,0,Bambu Lab_ PLA Glow_ 1kg,FDM Printing,990,883.9285714,1,PLA
+58,0,Bambu Lab_ PLA Wood_ 1kg,FDM Printing,990,883.9285714,1,PLA
+59,0,Bambu Lab_ PLA-CF_ 1kg,FDM Printing,990,883.9285714,1,PLA
+60,0,Bambu Lab_ PLA Translucent_ 1kg,FDM Printing,699,624.1071429,1,PLA
+61,0,Bambu Lab_ PLA Lite_ 1kg,FDM Printing,690,616.0714286,1,PLA
+62,0,Bambu Lab_ Refilament PLA Basic / Matte_ 1kg,FDM Printing,649,579.4642857,1,PLA
+63,0,Bambu Lab_ Refilament PLA Lite_ 1kg,FDM Printing,590,526.7857143,1,PLA
+64,0,Bambu Lab_ Refilament PLA-CF_ 1kg,FDM Printing,900,803.5714286,1,PLA
+65,0,Bambu Lab_ PLA Aero_ 1kg,FDM Printing,2449,2186.607143,1,PLA
+66,0,Polymaker_ Panchroma PLA Basic_ 1kg,FDM Printing,749,668.75,1,PLA
+67,0,Polymaker_ Panchroma Matte_ 1kg,FDM Printing,749,668.75,1,PLA
+68,0,Polymaker_ Panchroma Satin / Matte Dual / Gradient_ 1kg,FDM Printing,799,713.3928571,1,PLA
+69,0,Polymaker_ Panchroma Silk_ 1kg,FDM Printing,899,802.6785714,1,PLA
+70,0,Polymaker_ Panchroma Dual Silk_ 1kg,FDM Printing,999,891.9642857,1,PLA
+71,0,Polymaker_ Panchroma Galaxy / Starlight / Luminous / Glow_ 1kg,FDM Printing,999,891.9642857,1,PLA
+72,0,Polymaker_ Panchroma UV Color Change_ 1kg,FDM Printing,1199,1070.535714,1,PLA
+73,0,Kexcelled_ K5 PLA Matte_ 1kg,FDM Printing,849,758.0357143,1,PLA
+74,0,Kexcelled_ K5 PLA Gradient_ 1kg,FDM Printing,1190,1062.5,1,PLA
+75,0,Kexcelled_ K6 PLA FR_ 1kg,FDM Printing,1649,1472.321429,1,PLA
+76,0,Jadeway_ PLA_ 1kg,FDM Printing,549,490.1785714,1,PLA
+77,0,Jadeway_ PLA Matte_ 1kg,FDM Printing,599,534.8214286,1,PLA
+78,0,Jadeway_ PLA Silk_ 1kg,FDM Printing,709,633.0357143,1,PLA
+79,0,Jadeway_ PLA Galaxy_ 1kg,FDM Printing,799,713.3928571,1,PLA
+80,0,BIQU_ PLA-HR Flexible_ 1kg,FDM Printing,3490,3116.071429,1,PLA
+81,0,ESUN_ ABS+_ 1kg,FDM Printing,750,669.6428571,1,ABS
+82,0,ESUN_ ABS+HS High Speed_ 1kg,FDM Printing,800,714.2857143,1,ABS
+83,0,ESUN_ ABS Max_ 1kg,FDM Printing,950,848.2142857,1,ABS
+84,0,ESUN_ ABS High Temp / ABS-HT_ 1kg,FDM Printing,999,891.9642857,1,ABS
+85,0,ESUN_ ABS-CF Carbon Fiber_ 1kg,FDM Printing,1449,1293.75,1,ABS
+86,0,Bambu Lab_ ABS_ 1kg,FDM Printing,749,668.75,1,ABS
+87,0,Bambu Lab_ ABS-GF Glass Fiber_ 1kg,FDM Printing,1149,1025.892857,1,ABS
+88,0,Bambu Lab_ Refilament ABS_ 1kg,FDM Printing,649,579.4642857,1,ABS
+89,0,Sunlu_ ABS_ 0.9kg,FDM Printing,599,534.8214286,1,ABS
+90,0,Sunlu_ ABS_ 1kg,FDM Printing,599,534.8214286,1,ABS
+91,0,Sunlu_ High Speed ABS_ 1kg,FDM Printing,749,668.75,1,ABS
+92,0,Sunlu_ PC-ABS_ 1kg,FDM Printing,2050,1830.357143,1,ABS
+93,0,Kexcelled_ K5 ABS_ 1kg,FDM Printing,799,713.3928571,1,ABS
+94,0,Kexcelled_ K5 ABS Matte_ 1kg,FDM Printing,859,766.9642857,1,ABS
+95,0,Jadeway_ ABS_ 1kg,FDM Printing,549,490.1785714,1,ABS
+96,0,ESUN_ PETG Solid_ 1kg,FDM Printing,750,669.6428571,1,PETG
+97,0,ESUN_ PETG Natural Transparent Clear_ 1kg,FDM Printing,750,669.6428571,1,PETG
+98,0,ESUN_ PETG Basic_ 1kg,FDM Printing,750,669.6428571,1,PETG
+99,0,ESUN_ PETG+HS High Speed_ 1kg,FDM Printing,800,714.2857143,1,PETG
+100,0,ESUN_ ReFilament PETG_ 1kg,FDM Printing,700,625,1,PETG
+101,0,ESUN_ ReFilament PETG (Adaptable Bambu)_ 1kg,FDM Printing,699,624.1071429,1,PETG
+102,0,ESUN_ PETG Matte_ 1kg,FDM Printing,749,668.75,1,PETG
+103,0,ESUN_ PETG-ESD_ 1kg,FDM Printing,1499,1338.392857,1,PETG
+104,0,ESUN_ PETG-CF_ 1kg,FDM Printing,1189,1061.607143,1,PETG
+105,0,Sunlu_ PETG_ 1kg,FDM Printing,749,668.75,1,PETG
+106,0,Sunlu_ PETG_ 0.9kg,FDM Printing,749,668.75,1,PETG
+107,0,Sunlu_ High Speed Matte PETG_ 1kg,FDM Printing,779,695.5357143,1,PETG
+108,0,Elegoo_ Rapid PETG_ 1kg,FDM Printing,699,624.1071429,1,PETG
+109,0,Elegoo_ PETG Pro_ 1kg,FDM Printing,679,606.25,1,PETG
+110,0,Bambu Lab_ PETG HF_ 1kg,FDM Printing,749,668.75,1,PETG
+111,0,Bambu Lab_ PETG Translucent_ 1kg,FDM Printing,749,668.75,1,PETG
+112,0,Bambu Lab_ PETG-CF_ 1kg,FDM Printing,1099,981.25,1,PETG
+113,0,Bambu Lab_ Refilament PETG HF_ 1kg,FDM Printing,649,579.4642857,1,PETG
+114,0,Bambu Lab_ Refilament PETG Translucent_ 1kg,FDM Printing,649,579.4642857,1,PETG
+115,0,Jadeway_ Hyper PETG_ 1kg,FDM Printing,549,490.1785714,1,PETG
+116,0,Jadeway_ PETG Matte_ 1kg,FDM Printing,599,534.8214286,1,PETG
+117,0,Kexcelled_ K5 PETG_ 1kg,FDM Printing,829,740.1785714,1,PETG
+118,0,Kexcelled_ K5 PETG GF_ 1kg,FDM Printing,1049,936.6071429,1,PETG
+119,0,Kexcelled_ K5 PETG Matte_ 1kg,FDM Printing,899,802.6785714,1,PETG
+120,0,ESUN_ ASA UV Resistant_ 1kg,FDM Printing,1149,1025.892857,1,ASA
+121,0,ESUN_ ASA+_ 1kg,FDM Printing,1299,1159.821429,1,ASA
+122,0,Elegoo_ ASA_ 1kg,FDM Printing,799,713.3928571,1,ASA
+123,0,Bambu Lab_ ASA_ 1kg,FDM Printing,1199,1070.535714,1,ASA
+124,0,Bambu Lab_ ASA Aero_ 1kg,FDM Printing,2349,2097.321429,1,ASA
+125,0,Jadeway_ ASA_ 1kg,FDM Printing,799,713.3928571,1,ASA
+126,0,ESUN_ TPU 95A Flexible_ 1kg,FDM Printing,1199.75,1071.205357,1,TPU
+127,0,ESUN_ TPU 95A Transparent_ 1kg,FDM Printing,1199,1070.535714,1,TPU
+128,0,ESUN_ TPU 95A Rainbow_ 1kg,FDM Printing,1600,1428.571429,1,TPU
+129,0,ESUN_ TPU 95A Color Change (Temp)_ 1kg,FDM Printing,1700,1517.857143,1,TPU
+130,0,ESUN_ TPU-64D_ 1kg,FDM Printing,949,847.3214286,1,TPU
+131,0,Sunlu_ TPU Silk_ 1kg,FDM Printing,999,891.9642857,1,TPU
+132,0,Bambu Lab_ TPU 95A HF_ 1kg,FDM Printing,1990,1776.785714,1,TPU
+133,0,Bambu Lab_ TPU for AMS_ 1kg,FDM Printing,1649,1472.321429,1,TPU
+134,0,Bambu Lab_ TPU 85A_ 1kg,FDM Printing,1999,1784.821429,1,TPU
+135,0,Bambu Lab_ TPU 90A_ 1kg,FDM Printing,1899,1695.535714,1,TPU
+136,0,Bambu Lab_ TPU 90A Gradient_ 1kg,FDM Printing,2249,2008.035714,1,TPU
+137,0,Bambu Lab_ TPU 90A White_ 1kg,FDM Printing,1949,1740.178571,1,TPU
+138,0,ESUN_ TPE-83A eLastic_ Natural/White_ 1kg,FDM Printing,1700,1517.857143,1,TPE
+139,0,ESUN_ TPE-83A eLastic_ Black_ 1kg,FDM Printing,1900,1696.428571,1,TPE
+140,0,ESUN_ ePA Clear_  1kg,FDM Printing,1800,1607.142857,1,NYLON/PA
+141,0,Sunlu_ PA6-CF_ Black_ 1kg,FDM Printing,2599,2320.535714,1,NYLON/PA
+142,0,ESUN_ Nylon_ PA12-CF_ 1kg,FDM Printing,4999,4463.392857,1,CARBON FIBER
+143,0,ESUN_ Nylon_ PA12+CF_ 1kg,FDM Printing,6499,5802.678571,1,CARBON FIBER
+144,0,ESUN_ PLA_ PLA-CF_ 1kg,FDM Printing,1169,1043.75,1,CARBON FIBER
+145,0,ESUN_ PETG_ PETG-CF_ 1kg,FDM Printing,1189,1061.607143,1,CARBON FIBER
+146,0,ESUN_ ABS_ ABS-CF_ 1kg,FDM Printing,1449,1293.75,1,CARBON FIBER
+147,0,Sunlu_ Nylon_ PA6-CF_ 1kg,FDM Printing,2599,2320.535714,1,CARBON FIBER
+148,0,Bambu Lab_ Nylon_ PA6-CF_ 1kg,FDM Printing,3149,2811.607143,1,CARBON FIBER
+149,0,Bambu Lab_ Nylon_ PAHT-CF_ 1kg,FDM Printing,3990,3562.5,1,CARBON FIBER
+150,0,Bambu Lab_ PLA_ PLA-CF_ 1kg,FDM Printing,990,883.9285714,1,CARBON FIBER
+151,0,Bambu Lab_ PETG_ PETG-CF_ 1kg,FDM Printing,1099,981.25,1,CARBON FIBER
+152,0,Bambu Lab_ PLA_ PLA-CF Refilament_ 1kg,FDM Printing,900,803.5714286,1,CARBON FIBER
+153,0,ESUN_ Resin-PLA Pro_ 1kg,SLA Printing,1300,1160.714286,1.1,ESUN
+154,0,ESUN_ Resin-PLA (Standard)_ 1kg,SLA Printing,1190,1062.5,1.1,ESUN
+155,0,ESUN_ Hard Tough Resin_ 1kg,SLA Printing,2500,2232.142857,1.1,ESUN
+156,0,ESUN_ High Temp Resin_ 1kg,SLA Printing,2599,2320.535714,1.1,ESUN
+157,0,ESUN_ HT100 High Temperature Resin_ 1kg,SLA Printing,2799,2499.107143,1.1,ESUN
+158,0,ESUN_ PMMA-like Clear Resin PM200_ 1kg,SLA Printing,2950,2633.928571,1.1,ESUN
+159,0,ESUN_ Castable Jewelry Resin_ 1kg,SLA Printing,9300,8303.571429,1.1,ESUN
+160,0,ESUN_ TC100 Dental Crown Resin_ 1kg,SLA Printing,5500,4910.714286,1.1,ESUN
+161,0,ESUN_ OM100 Ortho Model Resin_ 1kg,SLA Printing,2500,2232.142857,1.1,ESUN
+162,0,ESUN_ OM100 Ortho Model Resin (Beige New)_ 1kg,SLA Printing,2499,2231.25,1.1,ESUN
+163,0,ESUN_ SG100 Surgical Guide Resin_ 1kg,SLA Printing,5500,4910.714286,1.1,ESUN
+164,0,ESUN_ WO100 Water-Washable Ortho Resin_ 1kg,SLA Printing,1999,1784.821429,1.1,ESUN
+165,0,ESUN_ DM100 Dental Restoration Resin_ 1kg,SLA Printing,2499,2231.25,1.1,ESUN
+166,0,Sunlu_ Standard Resin_ 1kg,SLA Printing,1100,982.1428571,1.1,SUNLU
+167,0,Sunlu_ Standard Plus Resin_ 1kg,SLA Printing,1199,1070.535714,1.1,SUNLU
+168,0,Sunlu_ 14K Standard Resin_ 1kg,SLA Printing,1449,1293.75,1.1,SUNLU
+169,0,Sunlu_ ABS-Like Resin_ 1kg,SLA Printing,1450,1294.642857,1.1,SUNLU
+170,0,Sunlu_ Water Washable ABS-Like Resin_ 1kg,SLA Printing,1749,1561.607143,1.1,SUNLU
+171,0,Sunlu_ DM 2.0 Dental Model Resin_ 1kg,SLA Printing,2949,2633.035714,1.1,SUNLU
+172,0,Elegoo_ Standard 8K Resin_ 1kg,SLA Printing,2000,1785.714286,1.1,ELEGOO
+173,0,Elegoo_ ABS-Like Resin_ 1kg,SLA Printing,1249,1115.178571,1.1,ELEGOO
+174,0,Elegoo_ ABS-Like Resin 3.0_ 1kg,SLA Printing,1249,1115.178571,1.1,ELEGOO
+175,0,Anycubic_ Normal Resin_ 1kg,SLA Printing,1099,981.25,1.1,ANYCUBIC
+176,0,Anycubic_ Standard Resin V2_ 1kg,SLA Printing,1299,1159.821429,1.1,ANYCUBIC
+177,0,Anycubic_ ABS-Like Resin Pro 2_ 1kg,SLA Printing,1449,1293.75,1.1,ANYCUBIC
+178,0,Anycubic_ Tough Resin 2.0_ 1kg,SLA Printing,1999,1784.821429,1.1,ANYCUBIC
+179,0,Creality_ Halot ABS-Like Resin 2.0_ 1kg,SLA Printing,1290,1151.785714,1.1,CREALITY
+180,0,Creality_ Halot Rigid Resin_ 1kg,SLA Printing,1349,1204.464286,1.1,CREALITY
 181,0,Kings 3d - ABS K151,FGF Printing,399,356.25,1,ABS
 182,0,Kings 3d - ABS K107,FGF Printing,549,490.1785714,1,ABS
 183,0,Kings 3d - ABS K165FR (Flame Retardant),FGF Printing,699,624.1071429,1,ABS
