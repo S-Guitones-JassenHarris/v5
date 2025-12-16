@@ -185,7 +185,7 @@ export const resinPrintingFields = [
     label: 'Lead time (hours)',
     inputType: 'number',
     required: false,
-    placeholder: 'Auto default = Total print time × 5, hard minimum cap of 3 days',
+    placeholder: 'Default = additional × 5 print time , hard minimum cap of 3 days, recommended to use for prints greater than 24 hours',
     updateOn: 'blur',
   },
   {

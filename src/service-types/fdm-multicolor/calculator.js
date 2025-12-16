@@ -69,7 +69,7 @@ export function calculateFdmMultiColorQuote(inputs = {}, catalogs = {}) {
   const kgWeight = printWeightGrams / 1000;
 
   const leadTimeDefaultHours =
-    totalPrintTimeHours * DEFAULT_LEAD_TIME_MULTIPLIER;
+    totalPrintTimeHours * (DEFAULT_LEAD_TIME_MULTIPLIER + (batchCount + testPrintCount));
   const leadTimeHours = toNumber(inputs.leadTimeHours, leadTimeDefaultHours);
 
   // --- Machine (CSV or custom) ---

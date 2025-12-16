@@ -15,7 +15,6 @@ const DEFAULT_ELECTRICAL_COST_PER_KWH = 12.5;       // PHP per kWh
 const DEFAULT_BASIC_SERVICE_COST_PER_HOUR = 500;    // PHP per hour
 const DEFAULT_MISC_COSTS = 0;                       // PHP
 const DEFAULT_LEAD_TIME_MULTIPLIER = 5;             // lead time = totalPrintTimeHours * 5
-
 // Machine ROI defaults
 const DEFAULT_CUSTOM_MACHINE_ROI_HOURS = 2190;      // for custom machines
 const DEFAULT_MACHINE_ROI_HOURS_FALLBACK = 2190;    // fallback for CSV machines if ROI missing
@@ -69,7 +68,7 @@ export function calculateFdmSingleColorQuote(inputs = {}, catalogs = {}) {
   const kgWeight = printWeightGrams / 1000;
 
   const leadTimeDefaultHours =
-    totalPrintTimeHours * DEFAULT_LEAD_TIME_MULTIPLIER;
+    totalPrintTimeHours * (DEFAULT_LEAD_TIME_MULTIPLIER + (batchCount + testPrintCount));
   const leadTimeHours = toNumber(inputs.leadTimeHours, leadTimeDefaultHours);
 
   // --- Machine (CSV or custom) ---
