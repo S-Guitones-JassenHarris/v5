@@ -1,8 +1,13 @@
 V5 Quotation Tool - Changelog
 
+
+
 -v05.2: Steve Guitones (16/12/2025)
 . begin updated printer and material data. Resin densities need to be defined still( all were given an arbitrary density  of 1.1). Fixed lead time
-calculations and input labels. 
+calculations and input labels. b
+. a bug regarding import and export has been found, wherein different results come from the same imported inputs. this has not yet been replicated,
+highly recommend double checking results summary in between exports when doing an import export loop
+
 
 - v05.1: Steve Guitones (15/12/2025)
 . Initial working prototype uploaded to github , https://s-guitones-jassenharris.github.io/v5/ 
