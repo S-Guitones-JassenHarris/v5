@@ -77,3 +77,6 @@ machine_id,machine_type,brand,machine_name,  raw_price_php  ,adjusted_machine_pr
 76,3D Scan,Creality,Sermoon S1,179990,160705.36,24,2190,3d scan
 77,3D Scan,Creality,Raptor Pro,124900,111517.86,24,2190,3d scan
 78,3D Scan,Creality,Raptor X,274990,245526.79,24,2190,3d scan
+79,FDM Printing,Bambulab,H2S Non laser,82999,74106.25,1800,2190,fdm printing
+80,FDM Printing,Bambulab,H2S Non laser Combo,96999,86606.25,1890,2190,fdm printing
+81,FDM Printing,Bambulab,H2S laser Combo,137999,123213.3929,1890,2190,fdm printing
