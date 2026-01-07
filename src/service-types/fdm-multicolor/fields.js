@@ -141,7 +141,7 @@ export const fdmMultiColorFields = [
     label: 'Electrical cost per kWh (PHP)',
     inputType: 'number',
     required: false,
-    placeholder: 'Default 12.5',
+    placeholder: 'Default 13.5',
     updateOn: 'blur',
   },
   {

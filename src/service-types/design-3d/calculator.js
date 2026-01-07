@@ -10,7 +10,7 @@ const ASSUMED_LAPTOP_WATTS = 300;          // W
 const PER_DAY_HOURS = 8;                    // normal
 const PER_DAY_RUSH_HOURS = 10;              // rush
 
-const DEFAULT_ELECTRICAL_COST_PER_KWH = 12.5;   // PHP/kWh
+const DEFAULT_ELECTRICAL_COST_PER_KWH = 13.5;   // PHP/kWh
 const DEFAULT_BASIC_SERVICE_COST_PER_HOUR = 500; // PHP/hr
 
 // Complexity mapping: UI stores strings, calculator uses numeric [1..5]

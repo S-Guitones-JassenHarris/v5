@@ -11,7 +11,7 @@ const DEFAULT_TEST_PRINT_COUNT = 0;
 const DEFAULT_BATCH_COUNT = 1;
 const DEFAULT_PREPARATION_MINUTES = 0;
 const DEFAULT_HANDLING_MINUTES_PER_BATCH = 10;      // default 10 minutes per batch
-const DEFAULT_ELECTRICAL_COST_PER_KWH = 12.5;       // PHP per kWh
+const DEFAULT_ELECTRICAL_COST_PER_KWH = 13.5;       // PHP per kWh
 const DEFAULT_BASIC_SERVICE_COST_PER_HOUR = 500;    // PHP per hour
 const DEFAULT_MISC_COSTS = 0;                       // PHP
 const DEFAULT_LEAD_TIME_MULTIPLIER = 5;             // lead time = totalPrintTimeHours * 5
